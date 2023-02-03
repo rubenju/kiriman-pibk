@@ -1,0 +1,192 @@
+body {
+  color: #6B7483 !important;
+  background-color: #efefef;
+}
+
+body h1, h2, h3, h4, h5, h6 {
+  color: #30353D !important;
+}
+
+.header {
+  background-color: #30353D;
+  color: white;
+}
+
+.header .toggle-sidebar-btn {
+  color: white;
+}
+
+.header .nav-profile {
+  color: white;
+}
+
+.col-border {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.pibk .card{
+  border: 1px solid #eeeeee;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.05);
+}
+
+.pibk .card-title {
+  color: black;
+  font-weight: 600;
+  padding: 16px 0 10px 0;
+}
+
+.card hr {
+  margin: 0 0 16px 0;
+}
+
+.card-form .card-title {
+  font-size: 16px;
+}
+
+.card-form label{
+  font-size: 12px;
+}
+
+.card-form input, select{
+  font-size: 14px !important;
+}
+
+.step {
+  color: #aaaaaa;
+  font-size: 14px;
+}
+
+.step-icon {
+  margin-left: 8px;
+  font-size: 1.2rem;
+}
+
+.step.activated{
+  color: black;
+}
+
+.step.activated .step-icon{
+  color: #659BEC;
+}
+
+.step.active{
+  color: black;
+}
+
+.step.active .step-icon{
+  color: #659BEC;
+}
+
+#form-pibk fieldset {
+  display: none;
+}
+
+.box-style {
+  margin: 0px 0px 3px 0px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+}
+
+#form-pibk .input-error { border-color: #f35b3f; }
+
+.final-form {
+  color: #30353D;
+}
+
+.final-form .form-title {
+  color: white !important;
+  background-color: #30353D;
+  border-radius: 5px;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+button {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+}
+
+#form-pibk .btn-previous{
+  color: #30353D;
+  border-color: #30353D;
+}
+
+#form-pibk .btn-previous:hover{
+  background: #f1f1f1;
+}
+
+#btn-delete {
+  color: white;
+  box-shadow: 0px 4px 16px rgba(245, 106, 106, 0.5);
+  border-radius: 8px;
+  background: #F56A6A;
+  border: 1px solid #CC5858;
+}
+
+#btn-add {
+  color: white;
+  box-shadow: 0px 4px 16px rgba(101, 155, 236, 0.5);
+  border-radius: 8px;
+  background: #659BEC;
+  border: 1px solid #4982D7;
+}
+
+#btn-delete:hover {
+  background: #f18a8a;
+  color: white;
+}
+
+#btn-add:hover {
+  background: #91b6ee;
+  color: white;
+}
+
+.final-form label, .final-form input, .final-form h6{
+  font-size: 14px;
+}
+
+.btn-style {
+  background: #30353D !important;
+  color: white;
+  font-size: 14px;
+}
+
+.btn-style:hover {
+  opacity: 0.9 !important;
+  color: white;
+}
+
+.btn-send {
+  background: #3cce3c;
+  font-size: 14px;
+}
+
+.btn-send:hover {
+  background: #53ff53;
+  color: #30353D;
+}
+
+a .btn {
+  font-size: 14px !important;
+}
+
+.table-responsive, .table-responsive label {
+  font-size: 14px !important;
+}
+
+.table-responsive .pagination {
+  --bs-pagination-font-size: 0.875rem;
+  --bs-pagination-color: #30353D;
+  --bs-pagination-active-bg: #30353D;
+  --bs-pagination-hover-color: #212429;
+  --bs-pagination-focus-color: #212429;
+  --bs-pagination-active-border-color: #30353D;
+}
+
+#table-data a {
+  font-size: 14px !important;
+  background-color: #30353D;
+  color: white;
+}
