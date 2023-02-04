@@ -147,8 +147,7 @@
                                   </div>
                                   <div class="mb-2">
                                     <label for="inputTglBC" class="form-label">Tanggal BC 1.1</label>
-                                    <input type="date" placeholder="yyyy/mm/dd" class="form-control"
-                                      id="inputTglBC" name="inputTglBC">
+                                    <input type="date" class="form-control" id="inputTglBC" name="inputTglBC">
                                   </div>
                                 </div>
                               </div>
@@ -684,21 +683,27 @@
                               <h6 class="form-title">Detail Kantor</h6>
                             </div>
                             <div class="row mb-2">
-                              <label for="readNomorBarang" class="col-form-label col-md-5 col-xxl-4">Nomor Barang</label>
+                              <label for="readNomorBarang" class="col-form-label col-md-5 col-xxl-4">Nomor
+                                Barang</label>
                               <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly type="text" class="form-control" id="readNomorBarang" name="readNomorBarang">
+                                <input disabled readonly type="text" class="form-control" id="readNomorBarang"
+                                  name="readNomorBarang">
                               </div>
                             </div>
                             <div class="row mb-2">
-                              <label for="readKantorSerah" class="col-form-label col-md-5 col-xxl-4">Kantor Serah</label>
+                              <label for="readKantorSerah" class="col-form-label col-md-5 col-xxl-4">Kantor
+                                Serah</label>
                               <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly type="text" class="form-control" id="readKantorSerah" name="readKantorSerah">
+                                <input disabled readonly type="text" class="form-control" id="readKantorSerah"
+                                  name="readKantorSerah">
                               </div>
                             </div>
                             <div class="row mb-2">
-                              <label for="readKantorPabean" class="col-form-label col-md-5 col-xxl-4">Kantor Pabean</label>
+                              <label for="readKantorPabean" class="col-form-label col-md-5 col-xxl-4">Kantor
+                                Pabean</label>
                               <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly type="text" class="form-control" id="readKantorPabean" name="readKantorPabean">
+                                <input disabled readonly type="text" class="form-control" id="readKantorPabean"
+                                  name="readKantorPabean">
                               </div>
                             </div>
                           </div>
@@ -707,16 +712,19 @@
                               <h6 class="form-title">Detail Pelabuhan</h6>
                             </div>
                             <div class="row mb-2">
-                              <label for="readPelabuhanMuat" class="col-form-label col-md-5 col-xxl-4">Pelabuhan Muat</label>
+                              <label for="readPelabuhanMuat" class="col-form-label col-md-5 col-xxl-4">Pelabuhan
+                                Muat</label>
                               <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly class="form-control" id="readPelabuhanMuat" name="readPelabuhanMuat">
+                                <input disabled readonly class="form-control" id="readPelabuhanMuat"
+                                  name="readPelabuhanMuat">
                               </div>
                             </div>
                             <div class="row mb-2">
                               <label for="readPelabuhanBongkar" class="col-form-label col-md-5 col-xxl-4">Pelabuhan
                                 Bongkar</label>
                               <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly class="form-control" id="readPelabuhanBongkar" name="readPelabuhanBongkar">
+                                <input disabled readonly class="form-control" id="readPelabuhanBongkar"
+                                  name="readPelabuhanBongkar">
                               </div>
                             </div>
                             <div class="row mb-2">
@@ -733,15 +741,19 @@
                               <h6 class="form-title" class="form-title">Detail Pengangkut</h6>
                             </div>
                             <div class="row mb-2">
-                              <label for="readJenisAngkutan" class="col-form-label col-md-5 col-xxl-4">Jenis Angkutan</label>
+                              <label for="readJenisAngkutan" class="col-form-label col-md-5 col-xxl-4">Jenis
+                                Angkutan</label>
                               <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly class="form-control" id="readJenisAngkutan" name="readJenisAngkutan">
+                                <input disabled readonly class="form-control" id="readJenisAngkutan"
+                                  name="readJenisAngkutan">
                               </div>
                             </div>
                             <div class="row mb-2">
-                              <label for="readNamaPengangkut" class="col-form-label col-md-5 col-xxl-4">Nama Pengangkut</label>
+                              <label for="readNamaPengangkut" class="col-form-label col-md-5 col-xxl-4">Nama
+                                Pengangkut</label>
                               <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly type="text" class="form-control" id="readNamaPengangkut" name="readNamaPengangkut">
+                                <input disabled readonly type="text" class="form-control" id="readNamaPengangkut"
+                                  name="readNamaPengangkut">
                               </div>
                             </div>
                             <div class="row mb-2">
@@ -760,7 +772,8 @@
                             <div class="row mb-2">
                               <label for="readNoBC" class="col-form-label col-md-5 col-xxl-4">Nomor BC 1.1</label>
                               <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly type="text" class="form-control" id="readNoBC" name="readNoBC">
+                                <input disabled readonly type="text" class="form-control" id="readNoBC"
+                                  name="readNoBC">
                               </div>
                             </div>
                             <div class="row mb-2">
@@ -771,23 +784,27 @@
                               </div>
                             </div>
                             <div class="row mb-2">
-                              <label for="readNoPOSBC" class="col-form-label col-md-5 col-xxl-4">Nomor POS BC 1.1</label>
+                              <label for="readNoPOSBC" class="col-form-label col-md-5 col-xxl-4">Nomor POS BC
+                                1.1</label>
                               <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly type="text" class="form-control" id="readNoPOSBC" name="readNoPOSBC">
+                                <input disabled readonly type="text" class="form-control" id="readNoPOSBC"
+                                  name="readNoPOSBC">
                               </div>
                             </div>
                             <div class="row mb-2">
                               <label for="readNoSubPOSBC" class="col-form-label col-md-5 col-xxl-4">Nomor SubPOS BC
                                 1.1</label>
                               <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly type="text" class="form-control" id="readNoSubPOSBC" name="readNoSubPOSBC">
+                                <input disabled readonly type="text" class="form-control" id="readNoSubPOSBC"
+                                  name="readNoSubPOSBC">
                               </div>
                             </div>
                             <div class="row mb-2">
                               <label for="readNoSub2POSBC" class="col-form-label col-md-5 col-xxl-4">Nomor Sub SubPOS BC
                                 1.1</label>
                               <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly type="text" class="form-control" id="readNoSub2POSBC" name="readNoSub2POSBC">
+                                <input disabled readonly type="text" class="form-control" id="readNoSub2POSBC"
+                                  name="readNoSub2POSBC">
                               </div>
                             </div>
                           </div>
@@ -802,7 +819,8 @@
                               <label for="readJenisIDPemberitahu" class="col-form-label col-md-5 col-xxl-4">Jenis ID
                                 Pemberitahu</label>
                               <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly class="form-control" id="readJenisIDPemberitahu" name="readJenisIDPemberitahu">
+                                <input disabled readonly class="form-control" id="readJenisIDPemberitahu"
+                                  name="readJenisIDPemberitahu">
                               </div>
                             </div>
                             <div class="row mb-2">
@@ -841,8 +859,8 @@
                               <label for="readTglIzinPemberitahu" class="col-form-label col-md-5 col-xxl-4">Tanggal Izin
                                 Pemberitahu</label>
                               <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly type="date" class="form-control" id="readTglIzinPemberitahu"
-                                  name="readTglIzinPemberitahu">
+                                <input disabled readonly type="date" class="form-control"
+                                  id="readTglIzinPemberitahu" name="readTglIzinPemberitahu">
                               </div>
                             </div>
                           </div>
@@ -854,21 +872,24 @@
                               <label for="readJenisIDPenerima" class="col-form-label col-md-5 col-xxl-4">Jenis ID
                                 Penerima</label>
                               <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly class="form-control" id="readJenisIDPenerima" name="readJenisIDPenerima">
+                                <input disabled readonly class="form-control" id="readJenisIDPenerima"
+                                  name="readJenisIDPenerima">
                               </div>
                             </div>
                             <div class="row mb-2">
                               <label for="readNoIDPenerima" class="col-form-label col-md-5 col-xxl-4">No. ID
                                 Penerima</label>
                               <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly type="text" class="form-control" id="readNoIDPenerima" name="readNoIDPenerima">
+                                <input disabled readonly type="text" class="form-control" id="readNoIDPenerima"
+                                  name="readNoIDPenerima">
                               </div>
                             </div>
                             <div class="row mb-2">
                               <label for="readNamaPenerima" class="col-form-label col-md-5 col-xxl-4">Nama
                                 Penerima</label>
                               <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly type="text" class="form-control" id="readNamaPenerima" name="readNamaPenerima">
+                                <input disabled readonly type="text" class="form-control" id="readNamaPenerima"
+                                  name="readNamaPenerima">
                               </div>
                             </div>
                             <div class="row mb-2">
@@ -891,7 +912,8 @@
                               <label for="readNegaraTujuan" class="col-form-label col-md-5 col-xxl-4">Negara
                                 Tujuan</label>
                               <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly type="text" class="form-control" id="readNegaraTujuan" name="readNegaraTujuan">
+                                <input disabled readonly type="text" class="form-control" id="readNegaraTujuan"
+                                  name="readNegaraTujuan">
                               </div>
                             </div>
                           </div>
@@ -905,7 +927,8 @@
                               <label for="readNamaPengirim" class="col-form-label col-md-5 col-xxl-4">Nama
                                 Pengirim</label>
                               <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly type="text" class="form-control" id="readNamaPengirim" name="readNamaPengirim">
+                                <input disabled readonly type="text" class="form-control" id="readNamaPengirim"
+                                  name="readNamaPengirim">
                               </div>
                             </div>
                             <div class="row mb-2">
@@ -919,7 +942,8 @@
                             <div class="row mb-2">
                               <label for="readAsalNegara" class="col-form-label col-md-5 col-xxl-4">Asal Negara</label>
                               <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly type="text" class="form-control" id="readAsalNegara" name="readAsalNegara">
+                                <input disabled readonly type="text" class="form-control" id="readAsalNegara"
+                                  name="readAsalNegara">
                               </div>
                             </div>
                           </div>
@@ -947,7 +971,8 @@
                               <label for="readNoHouseBLAWB" class="col-form-label col-md-5 col-xxl-4">Nomor House
                                 BLAWB</label>
                               <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly type="text" class="form-control" id="readNoHouseBLAWB" name="readNoHouseBLAWB">
+                                <input disabled readonly type="text" class="form-control" id="readNoHouseBLAWB"
+                                  name="readNoHouseBLAWB">
                               </div>
                             </div>
                             <div class="row mb-2">
@@ -1023,7 +1048,7 @@
                       <button type="button" class="btn btn-style" id="btn-save"><i
                           class="ri-save-2-line me-1"></i>Simpan Data</button>
                       <button type="button" class="btn btn-send" id="btn-send"><i
-                        class="ri-send-plane-fill me-1"></i>Kirim Data</button>
+                          class="ri-send-plane-fill me-1"></i>Kirim Data</button>
                     </div>
                   </div>
                 </div>
@@ -1200,7 +1225,7 @@
         newRow.append('</tr>')
 
         $("#table-barang tbody").append(newRow);
-        
+
         // Swal.fire({
         //   title: 'Success!',
         //   text: 'Insert success',
@@ -1317,16 +1342,45 @@
         return table;
       }
 
-      // $("#btnNextBarang").click(function(e) {
-      //   e.preventDefault();
-
-      //   let data = setObject(getTableBarangObject());
-      //   let body = {
-      //     data: data,
-      //     "_token": "{{ csrf_token() }}"
-      //   };
-      //   saveObject(body);
-      // });
+      function setConfirmationForm() {
+        $("#readNomorBarang").val($('#inputNomorBarang').val());
+        $("#readKantorSerah").val($("select option[value='" + $('#selectKantorSerah').val() + "']").text());
+        $("#readKantorPabean").val($('#inputKantorPabean').val());
+        $("#readPelabuhanMuat").val($("select option[value='" + $('#selectPelabuhanMuat').val() + "']").text());
+        $("#readPelabuhanBongkar").val($("select option[value='" + $('#selectPelabuhanBongkar').val() + "']").text());
+        $("#readGudang").val($("select option[value='" + $('#selectGudang').val() + "']").text());
+        $("#readJenisAngkutan").val($("select option[value='" + $('#selectJenisAngkutan').val() + "']").text());
+        $("#readNamaPengangkut").val($('#inputNamaPengangkut').val());
+        $("#readNomorAngkutan").val($('#inputNomorAngkutan').val());
+        $("#readNoBC").val($('#inputNoBC').val());
+        $("#readTglBC").val($('#inputTglBC').val());
+        $("#readNoPOSBC").val($('#inputNoPOSBC').val());
+        $("#readNoSubPOSBC").val($('#inputNoSubPOSBC').val());
+        $("#readNoSub2POSBC").val($('#inputNoSub2POSBC').val());
+        $("#readJenisIDPemberitahu").val($("select option[value='" + $('#selectJenisIDPemberitahu').val() + "']").text());
+        $("#readNoIDPemberitahu").val($('#inputNoIDPemberitahu').val());
+        $("#readNamaPemberitahu").val($('#inputNamaPemberitahu').val());
+        $("#readAlamatPemberitahu").val($('#inputAlamatPemberitahu').val());
+        $("#readNoIzinPemberitahu").val($('#inputNoIzinPemberitahu').val());
+        $("#readTglIzinPemberitahu").val($('#inputTglIzinPemberitahu').val());
+        $("#readJenisIDPenerima").val($("select option[value='" + $('#selectJenisIDPenerima').val() + "']").text());
+        $("#readNoIDPenerima").val($('#inputNoIDPenerima').val());
+        $("#readNamaPenerima").val($('#inputNamaPenerima').val());
+        $("#readAlamatPenerima").val($('#inputAlamatPenerima').val());
+        $("#readNoTeleponPenerima").val($('#inputNoTeleponPenerima').val());
+        $("#readNegaraTujuan").val($('#inputNegaraTujuan').val());
+        $("#readNamaPengirim").val($('#inputNamaPengirim').val());
+        $("#readAlamatPengirim").val($('#inputAlamatPengirim').val());
+        $("#readAsalNegara").val($('#inputAsalNegara').val());
+        $("#readNoMasterBLAWB").val($('#inputNoMasterBLAWB').val());
+        $("#readTglMasterBLAWB").val($('#inputTglMasterBLAWB').val());
+        $("#readNoHouseBLAWB").val($('#inputNoHouseBLAWB').val());
+        $("#readTglHouseBLAWB").val($('#inputTglHouseBLAWB').val());
+        $("#table-barang-final").html($("#table-barang").html());
+        $("#table-barang-final tr").each(function(){
+          $(this).find("td:first").remove();
+        });
+      }
 
       function setObject(table) {
         body = {
@@ -1383,37 +1437,38 @@
 
         return body;
       }
+
+      function saveObject(data) {
+        $.ajax({
+          type: "post",
+          url: "{{ route('saveObject') }}",
+          data: data,
+          dataType: "json",
+          success: function(response) {
+            console.log(response);
+            console.log('object saved');
+            setConfirmationForm();
+          },
+          error: function(xhr, status, error) {
+            alert(xhr.responseText)
+          }
+        });
+      }
+
+      function getInitialJson() {
+        $.ajax({
+          type: "post",
+          url: "",
+          data: "",
+          dataType: "json",
+          success: function(response) {
+
+          },
+          error: function(xhr, status, error) {
+            alert(xhr.responseText)
+          }
+        });
+      }
     });
-
-    function saveObject(data) {
-      $.ajax({
-        type: "post",
-        url: "{{ route('saveObject') }}",
-        data: data,
-        dataType: "json",
-        success: function(response) {
-          console.log(response);
-          console.log('object saved');
-        },
-        error: function(xhr, status, error) {
-          alert(xhr.responseText)
-        }
-      });
-    }
-
-    function getInitialJson() {
-      $.ajax({
-        type: "post",
-        url: "",
-        data: "",
-        dataType: "json",
-        success: function(response) {
-
-        },
-        error: function(xhr, status, error) {
-          alert(xhr.responseText)
-        }
-      });
-    }
   </script>
 @endsection

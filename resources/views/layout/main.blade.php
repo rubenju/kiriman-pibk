@@ -21,7 +21,9 @@
   <link href="/assets/vendor/quill/quill.bubble.css" rel="stylesheet"> --}}
   <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   {{-- <link href="/assets/vendor/simple-datatables/style.css" rel="stylesheet"> --}}
+  <link href="/assets/vendor/jquery-ui/jquery-ui.min.css" rel="stylesheet">
   <script src="/assets/vendor/jquery/jquery-3.6.3.min.js"></script>
+  <script src="/assets/vendor/jquery-ui/jquery-ui.min.js"></script>
   <script src="/assets/vendor/sweetalert2/sweetalert2.all.min.js"></script>
 
   <!-- Template Main CSS File -->

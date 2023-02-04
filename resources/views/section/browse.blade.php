@@ -18,13 +18,13 @@
                   <h6 class="fw-bold">Select Date</h6>
                 </div>
                 <div class="row">
-                  <div class="col-3">
+                  <div class="col-5">
                     <label for="selectTglFrom">Form</label>
-                    <input type="date" class="form-control" name="selectTglFrom" id="selectTglFrom">
+                    <input type="text" class="form-control" name="selectTglFrom" id="selectTglFrom">
                   </div>
                   <div class="col-3">
                     <label for="selectTglTo">To</label>
-                    <input type="date" class="form-control" name="selectTglTo" id="selectTglTo">
+                    <input type="text" class="form-control" name="selectTglTo" id="selectTglTo">
                   </div>
                   <div class="col-3 align-self-end">
                     <button type="button" class="btn btn-style" id="btnBrowseData"><i class="bi bi-cloud-arrow-down-fill me-2"></i>Browse Data</button>
@@ -73,6 +73,9 @@
   <script type="text/javascript" src="/assets/vendor/datatables/dataTables.dateTime.min.js"></script>
   <script>
     $(document).ready(function () {
+      $('#selectTglFrom').datepicker();
+      $('#selectTglTo').datepicker();
+
       $("#btnBrowseData").click(function (e) { 
         e.preventDefault();
 
