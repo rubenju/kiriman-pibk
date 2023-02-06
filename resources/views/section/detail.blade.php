@@ -19,7 +19,7 @@
                   </div>
                   <hr>
                   <div class="row mb-3">
-                    <div class="col-6 px-3">
+                    <div class="col-md col-xl-6 px-3 mb-3 mb-md-0">
                       <div class="row mb-2">
                         <h6 class="form-title">Detail Kantor</h6>
                       </div>
@@ -42,7 +42,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-6 px-3">
+                    <div class="col-md col-xl-6 px-3 mb-3 mb-md-0">
                       <div class="row mb-2">
                         <h6 class="form-title">Detail Pelabuhan</h6>
                       </div>
@@ -68,7 +68,7 @@
                     </div>
                   </div>
                   <div class="row mb-1">
-                    <div class="col-6 px-3">
+                    <div class="col-md col-xl-6 px-3 mb-3 mb-md-0">
                       <div class="row mb-2">
                         <h6 class="form-title" class="form-title">Detail Pengangkut</h6>
                       </div>
@@ -93,7 +93,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-6 px-3">
+                    <div class="col-md col-xl-6 px-3 mb-3 mb-md-0">
                       <div class="row mb-2">
                         <h6 class="form-title">Detail BC 1.1</h6>
                       </div>
@@ -106,7 +106,7 @@
                       <div class="row mb-2">
                         <label for="readTglBC" class="col-form-label col-md-5 col-xxl-4">Tanggal BC 1.1</label>
                         <div class="col-md-7 col-xxl-8">
-                          <input type="date" class="form-control" id="readTglBC"
+                          <input type="text" class="form-control" id="readTglBC"
                             name="readTglBC" value="{{ $data["tanggalBC11"] }}">
                         </div>
                       </div>
@@ -134,7 +134,7 @@
                   </div>
                   <hr>
                   <div class="row mb-3">
-                    <div class="col-6 px-3">
+                    <div class="col-md col-xl-6 px-3 mb-3 mb-md-0">
                       <div class="row mb-2">
                         <h6 class="form-title">Detail Pemberitahu</h6>
                       </div>
@@ -181,12 +181,12 @@
                         <label for="readTglIzinPemberitahu" class="col-form-label col-md-5 col-xxl-4">Tanggal Izin
                           Pemberitahu</label>
                         <div class="col-md-7 col-xxl-8">
-                          <input type="date" class="form-control" id="readTglIzinPemberitahu"
+                          <input type="text" class="form-control" id="readTglIzinPemberitahu"
                             name="readTglIzinPemberitahu">
                         </div>
                       </div>
                     </div>
-                    <div class="col-6 px-3">
+                    <div class="col-md col-xl-6 px-3 mb-3 mb-md-0">
                       <div class="row mb-2">
                         <h6 class="form-title">Detail Penerima</h6>
                       </div>
@@ -237,7 +237,7 @@
                     </div>
                   </div>
                   <div class="row mb-1">
-                    <div class="col-6 px-3">
+                    <div class="col-md col-xl-6 px-3 mb-3 mb-md-0">
                       <div class="row mb-2">
                         <h6 class="form-title">Detail Pengirim</h6>
                       </div>
@@ -263,7 +263,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-6 px-3">
+                    <div class="col-md col-xl-6 px-3 mb-3 mb-md-0">
                       <div class="row mb-2">
                         <h6 class="form-title">Detail Master/House</h6>
                       </div>

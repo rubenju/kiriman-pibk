@@ -18,15 +18,15 @@
                   <h6 class="fw-bold">Select Date</h6>
                 </div>
                 <div class="row">
-                  <div class="col-5">
+                  <div class="col-12 col-sm-3">
                     <label for="selectTglFrom">Form</label>
-                    <input type="text" class="form-control" name="selectTglFrom" id="selectTglFrom">
+                    <input type="text" class="form-control" name="selectTglFrom" id="selectTglFrom" placeholder="yyyy-mm-dd" autocomplete="off">
                   </div>
-                  <div class="col-3">
+                  <div class="col-12 col-sm-3">
                     <label for="selectTglTo">To</label>
-                    <input type="text" class="form-control" name="selectTglTo" id="selectTglTo">
+                    <input type="text" class="form-control" name="selectTglTo" id="selectTglTo" placeholder="yyyy-mm-dd" autocomplete="off">
                   </div>
-                  <div class="col-3 align-self-end">
+                  <div class="col-12 col-sm-3 mt-3 mt-md-0 align-self-end">
                     <button type="button" class="btn btn-style" id="btnBrowseData"><i class="bi bi-cloud-arrow-down-fill me-2"></i>Browse Data</button>
                   </div>
                 </div>
@@ -73,8 +73,17 @@
   <script type="text/javascript" src="/assets/vendor/datatables/dataTables.dateTime.min.js"></script>
   <script>
     $(document).ready(function () {
-      $('#selectTglFrom').datepicker();
-      $('#selectTglTo').datepicker();
+      $('#selectTglFrom').datepicker({
+        dateFormat: "yy-mm-dd",
+        changeMonth: true,
+        changeYear: true
+      });
+      
+      $('#selectTglTo').datepicker({
+        dateFormat: "yy-mm-dd",
+        changeMonth: true,
+        changeYear: true
+      });
 
       $("#btnBrowseData").click(function (e) { 
         e.preventDefault();

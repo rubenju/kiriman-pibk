@@ -9,28 +9,28 @@
               <h5 class="card-title text-end"><i class="ri-file-paper-2-line me-2"></i>Form pengisian dokumen PIBK</h5>
               <hr>
               <div class="row justify-content-center px-5 py-3 text-center box-style" id="steps">
-                <div class="col-3 p-0 d-flex align-items-center justify-content-center step active">
+                <div class="col-sm col-xl-3 p-0 d-flex align-items-center justify-content-center step active">
                   <span>Entry Header PIBK</span>
                   <span class="step-icon">
                     <i class="bi bi-check-circle-fill"></i>
                   </span>
                 </div>
                 {{-- <div class="col-1 p-0 bi bi-dot d-flex align-items-center justify-content-center" style="width: 1rem"></div> --}}
-                <div class="col-3 p-0 d-flex align-items-center justify-content-center step">
+                <div class="col-sm col-xl-3 p-0 d-flex align-items-center justify-content-center step">
                   <span>Entry Attribute PIBK</span>
                   <span class="step-icon">
                     <i class="bi bi-check-circle-fill"></i>
                   </span>
                 </div>
                 {{-- <div class="col-1 p-0 bi bi-dot d-flex align-items-center justify-content-center" style="width: 1rem"></div> --}}
-                <div class="col-3 p-0 d-flex align-items-center justify-content-center step">
+                <div class="col-sm col-xl-3 p-0 d-flex align-items-center justify-content-center step">
                   <span>Entry Barang PIBK</span>
                   <span class="step-icon">
                     <i class="bi bi-check-circle-fill"></i>
                   </span>
                 </div>
                 {{-- <div class="col-1 p-0 bi bi-dot d-flex align-items-center justify-content-center" style="width: 1rem"></div> --}}
-                <div class="col-3 p-0 d-flex align-items-center justify-content-center step">
+                <div class="col-sm col-xl-3 p-0 d-flex align-items-center justify-content-center step">
                   <span>Konfirmasi</span>
                   <span class="step-icon">
                     <i class="bi bi-check-circle-fill"></i>
@@ -49,7 +49,7 @@
                       </div>
                     </div>
                     <div class="row">
-                      <div class="col-4">
+                      <div class="col-md col-xl-4">
                         <div class="card card-form">
                           <div class="card-body">
                             <h6 class="card-title">Detail Kantor</h6>
@@ -73,7 +73,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-4">
+                      <div class="col-md col-xl-4">
                         <div class="card card-form">
                           <div class="card-body">
                             <h6 class="card-title">Detail Pelabuhan</h6>
@@ -105,7 +105,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-4">
+                      <div class="col-md col-xl-4">
                         <div class="card card-form">
                           <div class="card-body">
                             <h6 class="card-title">Detail Pengangkut</h6>
@@ -139,7 +139,7 @@
                             <h6 class="card-title">Detail BC 1.1</h6>
                             <hr>
                             <div class="row">
-                              <div class="col-4">
+                              <div class="col-12 col-md-4 mb-3 mb-md-0">
                                 <div class="col-border">
                                   <div class="mb-2">
                                     <label for="inputNoBC" class="form-label">Nomor BC 1.1</label>
@@ -147,11 +147,11 @@
                                   </div>
                                   <div class="mb-2">
                                     <label for="inputTglBC" class="form-label">Tanggal BC 1.1</label>
-                                    <input type="date" class="form-control" id="inputTglBC" name="inputTglBC">
+                                    <input type="text" class="form-control" id="inputTglBC" name="inputTglBC" placeholder="yyyy-mm-dd" autocomplete="off">
                                   </div>
                                 </div>
                               </div>
-                              <div class="col-4">
+                              <div class="col-12 col-md-4 mb-3 mb-md-0">
                                 <div class="col-border">
                                   <div class="mb-2">
                                     <label for="inputNoPOSBC" class="form-label">Nomor POS BC 1.1</label>
@@ -164,7 +164,7 @@
                                   </div>
                                 </div>
                               </div>
-                              <div class="col-4">
+                              <div class="col-12 col-md-4 mb-3 mb-md-0">
                                 <div class="col-border">
                                   <div class="mb-2">
                                     <label for="inputNoSub2POSBC" class="form-label">Nomor Sub SubPOS BC 1.1</label>
@@ -199,7 +199,7 @@
                       </div>
                     </div>
                     <div class="row">
-                      <div class="col-6">
+                      <div class="col-sm col-xl-6">
                         <div class="card card-form">
                           <div class="card-body">
                             <h6 class="card-title">Detail Pemberitahu</h6>
@@ -235,13 +235,13 @@
                             </div>
                             <div class="mb-2">
                               <label for="inputTglIzinPemberitahu" class="form-label">Tanggal Izin Pemberitahu</label>
-                              <input type="date" class="form-control" id="inputTglIzinPemberitahu"
-                                name="inputTglIzinPemberitahu">
+                              <input type="text" class="form-control" id="inputTglIzinPemberitahu"
+                                name="inputTglIzinPemberitahu" placeholder="yyyy-mm-dd" autocomplete="off">
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="col-6">
+                      <div class="col-sm col-xl-6">
                         <div class="card card-form">
                           <div class="card-body">
                             <h6 class="card-title">Detail Master/House</h6>
@@ -254,7 +254,7 @@
                             <div class="mb-2">
                               <label for="inputTglMasterBLAWB" class="form-label">Tanggal Master BLAWB</label>
                               <input type="text" class="form-control" id="inputTglMasterBLAWB"
-                                name="inputTglMasterBLAWB">
+                                name="inputTglMasterBLAWB" placeholder="yyyy-mm-dd" autocomplete="off">
                             </div>
                             <div class="mb-2">
                               <label for="inputNoHouseBLAWB" class="form-label">Nomor House BLAWB</label>
@@ -264,14 +264,14 @@
                             <div class="mb-2">
                               <label for="inputTglHouseBLAWB" class="form-label">Tanggal House BLAWB</label>
                               <input type="text" class="form-control" id="inputTglHouseBLAWB"
-                                name="inputTglHouseBLAWB">
+                                name="inputTglHouseBLAWB" placeholder="yyyy-mm-dd" autocomplete="off">
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div class="row">
-                      <div class="col-6">
+                      <div class="col-sm col-xl-6">
                         <div class="card card-form">
                           <div class="card-body">
                             <h6 class="card-title">Detail Pengirim</h6>
@@ -293,7 +293,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-6">
+                      <div class="col-sm col-xl-6">
                         <div class="card card-form">
                           <div class="card-body">
                             <h6 class="card-title">Detail Penerima</h6>
@@ -358,7 +358,7 @@
                       </div>
                     </div>
                     <div class="row">
-                      <div class="col-4">
+                      <div class="col-md col-xl-4">
                         <div class="card card-form">
                           <div class="card-body">
                             <h6 class="card-title">Detail Kiriman</h6>
@@ -384,7 +384,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-4">
+                      <div class="col-md col-xl-4">
                         <div class="card card-form ">
                           <div class="card-body">
                             <h6 class="card-title">Detail Kemasan</h6>
@@ -428,7 +428,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-4">
+                      <div class="col-md col-xl-4">
                         <div class="card card-form">
                           <div class="card-body">
                             <h6 class="card-title">Detail Nilai/Berat</h6>
@@ -467,7 +467,7 @@
                             <h6 class="card-title">Detail Tarif/Bea</h6>
                             <hr>
                             <div class="row">
-                              <div class="col-3">
+                              <div class="col-12 col-md-6 col-lg-3 mb-3 mb-lg-0">
                                 <div class="col-border">
                                   <div class="mb-2">
                                     <label for="inputJenisTarifBM" class="form-label">Jenis Tarif BM</label>
@@ -484,7 +484,7 @@
                                   </div>
                                 </div>
                               </div>
-                              <div class="col-3">
+                              <div class="col-12 col-md-6 col-lg-3 mb-3 mb-lg-0">
                                 <div class="col-border">
                                   <div class="mb-2">
                                     <label for="inputJenisTarifBMAD" class="form-label">Jenis Tarif BMAD</label>
@@ -503,7 +503,7 @@
                                   </div>
                                 </div>
                               </div>
-                              <div class="col-3">
+                              <div class="col-12 col-md-6 col-lg-3 mb-3 mb-lg-0">
                                 <div class="col-border">
                                   <div class="mb-2">
                                     <label for="inputJenisTarifBMTP" class="form-label">Jenis Tarif BMTP</label>
@@ -522,7 +522,7 @@
                                   </div>
                                 </div>
                               </div>
-                              <div class="col-3">
+                              <div class="col-12 col-md-6 col-lg-3 mb-3 mb-lg-0">
                                 <div class="col-border">
                                   <div class="mb-2">
                                     <label for="inputTarifPPN" class="form-label">Tarif PPN</label>
@@ -678,7 +678,7 @@
                         </div>
                         <hr>
                         <div class="row mb-3">
-                          <div class="col-6 px-3">
+                          <div class="col-md col-xl-6 px-3 mb-3 mb-md-0">
                             <div class="row mb-2">
                               <h6 class="form-title">Detail Kantor</h6>
                             </div>
@@ -707,7 +707,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="col-6 px-3">
+                          <div class="col-md col-xl-6 px-3 mb-3 mb-md-0">
                             <div class="row mb-2">
                               <h6 class="form-title">Detail Pelabuhan</h6>
                             </div>
@@ -736,7 +736,7 @@
                           </div>
                         </div>
                         <div class="row mb-1">
-                          <div class="col-6 px-3">
+                          <div class="col-md col-xl-6 px-3 mb-3 mb-md-0">
                             <div class="row mb-2">
                               <h6 class="form-title" class="form-title">Detail Pengangkut</h6>
                             </div>
@@ -765,7 +765,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="col-6 px-3">
+                          <div class="col-md col-xl-6 px-3 mb-3 mb-md-0">
                             <div class="row mb-2">
                               <h6 class="form-title">Detail BC 1.1</h6>
                             </div>
@@ -779,7 +779,7 @@
                             <div class="row mb-2">
                               <label for="readTglBC" class="col-form-label col-md-5 col-xxl-4">Tanggal BC 1.1</label>
                               <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly type="date" class="form-control" id="readTglBC"
+                                <input disabled readonly type="text" class="form-control" id="readTglBC"
                                   name="readTglBC">
                               </div>
                             </div>
@@ -811,7 +811,7 @@
                         </div>
                         <hr>
                         <div class="row mb-3">
-                          <div class="col-6 px-3">
+                          <div class="col-md col-xl-6 px-3 mb-3 mb-md-0">
                             <div class="row mb-2">
                               <h6 class="form-title">Detail Pemberitahu</h6>
                             </div>
@@ -859,12 +859,12 @@
                               <label for="readTglIzinPemberitahu" class="col-form-label col-md-5 col-xxl-4">Tanggal Izin
                                 Pemberitahu</label>
                               <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly type="date" class="form-control"
+                                <input disabled readonly type="text" class="form-control"
                                   id="readTglIzinPemberitahu" name="readTglIzinPemberitahu">
                               </div>
                             </div>
                           </div>
-                          <div class="col-6 px-3">
+                          <div class="col-md col-xl-6 px-3 mb-3 mb-md-0">
                             <div class="row mb-2">
                               <h6 class="form-title">Detail Penerima</h6>
                             </div>
@@ -919,7 +919,7 @@
                           </div>
                         </div>
                         <div class="row mb-1">
-                          <div class="col-6 px-3">
+                          <div class="col-md col-xl-6 px-3 mb-3 mb-md-0">
                             <div class="row mb-2">
                               <h6 class="form-title">Detail Pengirim</h6>
                             </div>
@@ -947,7 +947,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="col-6 px-3">
+                          <div class="col-md col-xl-6 px-3 mb-3 mb-md-0">
                             <div class="row mb-2">
                               <h6 class="form-title">Detail Master/House</h6>
                             </div>
@@ -987,7 +987,7 @@
                         </div>
                         <hr>
                         <div class="row justify-content-center">
-                          <div class="col-6">
+                          <div class="col-md col-lg-6">
                             <h6 class="form-title text-center">Detail Barang</h6>
                           </div>
                         </div>
@@ -1071,6 +1071,30 @@
     }
 
     $(document).ready(function() {
+      $('#inputTglBC').datepicker({
+        dateFormat: "yy-mm-dd",
+        changeMonth: true,
+        changeYear: true
+      });
+      
+      $('#inputTglIzinPemberitahu').datepicker({
+        dateFormat: "yy-mm-dd",
+        changeMonth: true,
+        changeYear: true
+      });
+
+      $('#inputTglMasterBLAWB').datepicker({
+        dateFormat: "yy-mm-dd",
+        changeMonth: true,
+        changeYear: true
+      });
+
+      $('#inputTglHouseBLAWB').datepicker({
+        dateFormat: "yy-mm-dd",
+        changeMonth: true,
+        changeYear: true
+      });
+
       $("#form-pibk fieldset:first").fadeIn('slow')
 
       $('#form-pibk input[type="text"], #form-pibk input[type="date"], #form-pibk select').on('focus', function() {
