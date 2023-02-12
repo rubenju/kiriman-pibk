@@ -85,15 +85,15 @@ class browseController extends Controller
                     $status = $data["status"];
                     $button = '';
                     if ($status == 1) {
-                        $status = "Belum simpan final";
-                        $button .= '<a type="button" class="btn btn-sm m-1" href="edit/' . $noBarang . '"><i class="bi bi-pencil-square me-1"></i>Edit data</a>';
+                        $status = '<span style="color: #dc3545">Belum simpan final</span>';
+                        $button .= '<a type="button" class="btn btn-sm m-1" href="entry/' . $noBarang . '"><i class="bi bi-pencil-square me-1"></i>Edit data</a>';
                         $button .= '<a type="button" class="btn btn-sm m-1" href="save/' . $noBarang . '"><i class="ri-save-2-line me-1"></i>Simpan final</a>';
                     } else if ($status == 2) {
-                        $status = "Belum kirim data";
+                        $status = '<span style="color: #ffc107">Belum kirim data</span>';
                         $button .= '<a type="button" class="btn btn-sm m-1" href="detail/' . $noBarang . '"><i class="bi bi-eye me-1"></i>Lihat detail</a>';
                         $button .= '<a type="button" class="btn btn-sm m-1" href="send/' . $noBarang . '"><i class="ri-send-plane-fill me-1"></i>Kirim data</a>';
                     } else {
-                        $status = "Sudah kirim data";
+                        $status = '<span style="color: #198754">Sudah kirim data</span>';
                         $button .= '<a type="button" class="btn btn-sm m-1" href="detail/' . $noBarang . '"><i class="bi bi-eye me-1"></i>Lihat detail</a>';
                         $button .= '<a type="button" class="btn btn-sm m-1" href="status/' . $noBarang . '"><i class="bi bi-check2-square me-1"></i>Lihat status pengajuan</a>';
                     }
@@ -221,12 +221,12 @@ class browseController extends Controller
                 "nomorBC11" => "001677",
                 "totalBmad" => "5600000",
                 "totalBmtp" => "0",
-                "kodeGudang" => "IDPOS",
-                "kodeKantor" => "040600",
+                "kodeGudang" => "IPOS",
+                "kodeKantor" => "28500",
                 "kodeValuta" => "USD",
                 "nomorHouse" => "",
                 "totalPpnbm" => "0",
-                "kodePelMuat" => "CN",
+                "kodePelMuat" => "IDPSB",
                 "nomorBarang" => "EE123456789JP",
                 "nomorFlight" => "SQ0922",
                 "nomorMaster" => "61841235401",

@@ -1,6 +1,6 @@
 @push('page-style')
-  <link rel="stylesheet" type="text/css" href="/assets/vendor/datatables/dataTables.bootstrap5.min.css"/>
-  <link rel="stylesheet" type="text/css" href="/assets/vendor/datatables/dataTables.dateTime.min.css"/>
+  <link rel="stylesheet" type="text/css" href="/assets/vendor/datatables/dataTables.bootstrap5.min.css" />
+  <link rel="stylesheet" type="text/css" href="/assets/vendor/datatables/dataTables.dateTime.min.css" />
 @endpush
 @extends('layout.main')
 @section('contents')
@@ -19,15 +19,18 @@
                 </div>
                 <div class="row">
                   <div class="col-12 col-sm-3">
-                    <label for="selectTglFrom">Form</label>
-                    <input type="text" class="form-control" name="selectTglFrom" id="selectTglFrom" placeholder="yyyy-mm-dd" autocomplete="off">
+                    <label for="selectTglFrom" class="form-label">Form</label>
+                    <input type="text" class="form-control" name="selectTglFrom" id="selectTglFrom"
+                      placeholder="yyyy-mm-dd" autocomplete="off">
                   </div>
                   <div class="col-12 col-sm-3">
-                    <label for="selectTglTo">To</label>
-                    <input type="text" class="form-control" name="selectTglTo" id="selectTglTo" placeholder="yyyy-mm-dd" autocomplete="off">
+                    <label for="selectTglTo" class="form-label">To</label>
+                    <input type="text" class="form-control" name="selectTglTo" id="selectTglTo"
+                      placeholder="yyyy-mm-dd" autocomplete="off">
                   </div>
                   <div class="col-12 col-sm-3 mt-3 mt-md-0 align-self-end">
-                    <button type="button" class="btn btn-style" id="btnBrowseData"><i class="bi bi-cloud-arrow-down-fill me-2"></i>Browse Data</button>
+                    <x-button id="btnBrowseData"><i class="bi bi-cloud-arrow-down-fill me-2"></i>Browse Data</x-button>
+                    {{-- <button type="button" class="btn btn-style" id="btnBrowseData"><i class="bi bi-cloud-arrow-down-fill me-2"></i>Browse Data</button> --}}
                   </div>
                 </div>
                 <div class="row">
@@ -65,27 +68,45 @@
       </div>
     </div>
   </section>
-  
 @endsection
 @push('page-script')
   <script type="text/javascript" src="/assets/vendor/datatables/jquery.dataTables.min.js"></script>
   <script type="text/javascript" src="/assets/vendor/datatables/dataTables.bootstrap5.min.js"></script>
   <script type="text/javascript" src="/assets/vendor/datatables/dataTables.dateTime.min.js"></script>
   <script>
-    $(document).ready(function () {
-      $('#selectTglFrom').datepicker({
+    $(document).ready(function() {
+      $("#selectTglFrom").datepicker({
         dateFormat: "yy-mm-dd",
         changeMonth: true,
         changeYear: true
-      });
-      
-      $('#selectTglTo').datepicker({
+      })
+
+      $("#selectTglTo").datepicker({
         dateFormat: "yy-mm-dd",
         changeMonth: true,
         changeYear: true
+      })
+
+      $("#selectTglFrom").on("change", function() {
+        $("#selectTglTo").datepicker("option", "minDate", getDate(this));
+      })
+
+      $("#selectTglTo").on("change", function() {
+        $("#selectTglFrom").datepicker("option", "maxDate", getDate(this));
       });
 
-      $("#btnBrowseData").click(function (e) { 
+      function getDate(element) {
+        let date;
+        try {
+          date = $.datepicker.parseDate("yy-mm-dd", element.value);
+        } catch (error) {
+          date = null;
+        }
+
+        return date;
+      }
+
+      $("#btnBrowseData").click(function(e) {
         e.preventDefault();
 
         $("#browse-content").show();
@@ -99,8 +120,8 @@
             "_token": "{{ csrf_token() }}"
           },
           dataType: "json",
-          success: function (response) {
-            if(response.status == 1) {
+          success: function(response) {
+            if (response.status == 1) {
               // Swal.fire({
               //   title: 'Success!',
               //   text: 'Data ditemukan',

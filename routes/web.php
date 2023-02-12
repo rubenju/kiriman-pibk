@@ -25,7 +25,12 @@ Route::get('/', function () {
 
 //Entry
 Route::get('/entry', [entryController::class, 'show']);
+Route::get('/entry2', [entryController::class, 'show2']);
+
+Route::post('/add-new-transaction', [entryController::class, 'addNewTransaction'])->name('addNewTransaction');
 Route::post('/save-object', [entryController::class, 'saveObject'])->name('saveObject');
+// Route::get('/entry3', [entryController::class, 'show3'])->name('showForm');
+Route::get('/entry/{id}', [entryController::class, 'entry'])->name('showForm');
 
 //Browse
 Route::get('/browse', [browseController::class, 'show']);

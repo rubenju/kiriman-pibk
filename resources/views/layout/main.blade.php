@@ -29,12 +29,13 @@
   <!-- Template Main CSS File -->
   <link href="/assets/css/style.css" rel="stylesheet">
   <link href="/assets/css/pibk.css" rel="stylesheet">
+  {{-- <link href="{{ asset('assets/css/pibk.css') }}" rel="stylesheet"> --}}
 
   @stack('page-style')
 </head>
 <body>
-  @include('components.topbar')
-  @include('components.sidebar')
+  @include('partial.topbar')
+  @include('partial.sidebar')
   <main id="main" class="main">
     <div class="pagetitle">
       <h1>Kiriman PIBK</h1>
@@ -47,7 +48,7 @@
     </div>
     @yield('contents')
   </main>
-  @include('components.footer')
+  @include('partial.footer')
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
