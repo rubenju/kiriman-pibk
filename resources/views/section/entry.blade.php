@@ -1736,12 +1736,17 @@
             "_token": "{{ csrf_token() }}"
           },
           dataType: "json",
+          beforeSend: function() {
+            $("#preloader").show()
+          },
           success: function(response) {
+            $("#preloader").hide()
             let url = "{{ route('showForm', ':id') }}"
             url = url.replace(':id', noBarang)
             document.location.replace(url)
           },
           error: function(xhr, status, error) {
+            $("#preloader").hide()
             alert(xhr.responseText)
           }
         });
@@ -2219,12 +2224,17 @@
           url: "{{ route('saveObject') }}",
           data: data,
           dataType: "json",
+          beforeSend: function() {
+            $("#preloader").show()
+          },
           success: function(response) {
+            $("#preloader").hide()
             console.log(response);
             console.log('object saved');
             setConfirmationForm();
           },
           error: function(xhr, status, error) {
+            $("#preloader").hide()
             alert(xhr.responseText)
           }
         });
@@ -2232,4 +2242,10 @@
 
     });
   </script>
+  {{-- <script>
+    let addNewTransUrl = "{{ route('addNewTransaction') }}"
+    let showFormUrl = "{{ route('showForm', ':id') }}"
+    let saveObjectUrl = "{{ route('saveObject') }}"
+  </script> --}}
+  {{-- <script src="/assets/js/entry.js"></script> --}}
 @endsection

@@ -119,6 +119,10 @@
             tglAkhir: $("#selectTglTo").val(),
             "_token": "{{ csrf_token() }}"
           },
+          beforeSend: function() {
+            $("#preloader").show()
+            $(".container-blur").addClass('active');
+          },
           dataType: "json",
           success: function(response) {
             if (response.status == 1) {
@@ -139,9 +143,13 @@
             }
           },
           complete: function(response) {
+            $("#preloader").hide()
             $("#table-data").DataTable();
+            $(".container-blur").removeClass('active');
           },
           error: function(xhr, status, error) {
+            $("#preloader").hide()
+            $(".container-blur").removeClass('active');
             Swal.fire({
               title: 'Connection Error!',
               text: xhr.responseText,

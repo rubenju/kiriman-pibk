@@ -34,9 +34,16 @@
   @stack('page-style')
 </head>
 <body>
-  @include('partial.topbar')
+  <div class="position-fixed top-50 start-50" style="z-index: 999; display: none;" id="preloader">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  <div>
+    @include('partial.topbar')
   @include('partial.sidebar')
-  <main id="main" class="main">
+  
+  <main id="main" class="main container-blur">
     <div class="pagetitle">
       <h1>Kiriman PIBK</h1>
       <nav>
@@ -52,6 +59,8 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  </div>
+  
   <!-- Vendor JS Files -->
   {{-- <script src="/assets/vendor/apexcharts/apexcharts.min.js"></script> --}}
   <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
