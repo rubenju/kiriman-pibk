@@ -253,6 +253,7 @@ class browseController extends Controller
                 "kodeMarketplace" => "-",
                 "namaMarketplace" => "-",
                 "npwpPemberitahu" => "010016202093000",
+                "kodeNegaraTujuan" => "ID",
                 "nomorTelpPenerima" => "0812929292929",
                 "kodeJenisIdentitas" => "5",
                 "kodeNegaraPengirim" => "CN"

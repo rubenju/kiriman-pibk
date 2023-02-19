@@ -1,13 +1,6 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
 
-  <div class="d-flex align-items-center justify-content-between">
-    <a href="index.html" class="logo d-flex align-items-center">
-      <img src="/assets/img/posindonesia-logo.png" alt="">
-      {{-- <h6 class="text-white align-middle">Pos International</h6> --}}
-      <span class="d-none d-lg-block text-white">Pos Internasional</span>
-    </a>
-    <i class="bi bi-list toggle-sidebar-btn"></i>
-  </div><!-- End Logo -->
+  <i class="bi bi-list toggle-sidebar-btn"></i>
 
   <nav class="header-nav ms-auto">
     <ul class="d-flex align-items-center">

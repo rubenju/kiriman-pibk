@@ -31,15 +31,18 @@ Route::post('/add-new-transaction', [entryController::class, 'addNewTransaction'
 Route::post('/save-object', [entryController::class, 'saveObject'])->name('saveObject');
 // Route::get('/entry3', [entryController::class, 'show3'])->name('showForm');
 Route::get('/entry/{id}', [entryController::class, 'entry'])->name('showForm');
+Route::get('/profil', [entryController::class, 'getProfilPemberitahu'])->name('getProfil');
+
+//Detail
+Route::get('/send/{id}', [browseController::class, 'sendData'])->name('sendData');
+Route::get('/save/{id}', [browseController::class, 'saveData'])->name('saveData');
+Route::get('/detail/{id}', [browseController::class, 'showDetail'])->name('showDetail');
+Route::get('/detail2/{id}', [browseController::class, 'showDetail2'])->name('showDetail2');
+Route::get('/status/{id}', [browseController::class, 'getStatus'])->name('getStatus');
 
 //Browse
 Route::get('/browse', [browseController::class, 'show']);
 Route::post('/get-data', [browseController::class, 'getData'])->name('getData');
-Route::get('/detail/{id}', [browseController::class, 'showDetail'])->name('showDetail');
-Route::get('/detail2/{id}', [browseController::class, 'showDetail2'])->name('showDetail2');
 Route::get('/edit/{id}', [browseController::class, 'editData'])->name('editData');
-Route::get('/send/{id}', [browseController::class, 'sendData'])->name('sendData');
-Route::get('/save/{id}', [browseController::class, 'saveData'])->name('saveData');
-Route::get('/status/{id}', [browseController::class, 'getStatus'])->name('getStatus');
 
 

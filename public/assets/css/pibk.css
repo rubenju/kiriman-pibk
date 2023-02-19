@@ -7,6 +7,20 @@ body h1, h2, h3, h4, h5, h6 {
   color: #30353D !important;
 }
 
+.sidebar .nav-link, .sidebar .nav-link i {
+  color: #30353D !important;
+}
+
+.sidebar .header-logo {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  /* border-bottom: 1px solid #30353D; */
+  align-items: center;
+  justify-content: center;
+}
+
 .header {
   background-color: #30353D;
   color: white;

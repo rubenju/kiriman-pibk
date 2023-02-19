@@ -372,6 +372,8 @@ h6 {
 --------------------------------------------------------------*/
 .logo {
   line-height: 1;
+  display: flex;
+  justify-content: center;
 }
 
 @media (min-width: 1200px) {
@@ -381,19 +383,19 @@ h6 {
 }
 
 .logo img {
-  max-height: 26px;
-  margin-right: 6px;
+  max-height: 36px;
+  /* margin-right: 6px; */
 }
 
 .logo span {
-  /* font-size: 26px; */
+  font-size: 20px;
   font-weight: 700;
-  color: #012970;
+  color: #30353D;
   font-family: "Helvetica", sans-serif;
 }
 
 .header {
-  transition: all 0.5s;
+  transition: all 0.3s;
   z-index: 997;
   height: 60px;
   box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
@@ -615,13 +617,14 @@ h6 {
 --------------------------------------------------------------*/
 .sidebar {
   position: fixed;
-  top: 60px;
+  /* top: 60px; */
+  top: 0;
   left: 0;
   bottom: 0;
   width: 300px;
   z-index: 996;
   transition: all 0.3s;
-  padding: 20px;
+  padding: 0px 20px 20px;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #aab7cf transparent;
@@ -648,7 +651,8 @@ h6 {
 @media (min-width: 1200px) {
 
   #main,
-  #footer {
+  #footer,
+  #header {
     margin-left: 300px;
   }
 }
@@ -662,12 +666,27 @@ h6 {
 @media (min-width: 1200px) {
 
   .toggle-sidebar #main,
-  .toggle-sidebar #footer {
-    margin-left: 0;
+  .toggle-sidebar #footer{
+    /* margin-left: 0; */
+    margin-left: 100px;
+  }
+  
+  .toggle-sidebar #header {
+    margin-left: 100px;
   }
 
   .toggle-sidebar .sidebar {
-    left: -300px;
+    /* left: -300px; */
+    left: -200px;
+    padding-left: 222.5px;
+  }
+
+  .sidebar .nav-link span {
+    white-space: nowrap;
+  }
+
+  .toggle-sidebar .sidebar .nav-link span {
+    display: none;
   }
 }
 

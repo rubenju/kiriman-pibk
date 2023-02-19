@@ -306,7 +306,7 @@
                         <label for="readNoPOSBC" class="col-form-label col-md-5 col-xxl-4">Nomor POS BC 1.1</label>
                         <div class="col-md-7 col-xxl-8">
                           <input type="text" class="form-control" id="readNoPOSBC" name="readNoPOSBC"
-                            value="{{ $data['posBC11'] }}">
+                            value="{{ substr($data["posBC11"], 0, 4) }}">
                         </div>
                       </div>
                       <div class="row mb-2">
@@ -314,14 +314,15 @@
                           1.1</label>
                         <div class="col-md-7 col-xxl-8">
                           <input type="text" class="form-control" id="readNoSubPOSBC" name="readNoSubPOSBC"
-                            value="">
+                            value="{{ substr($data["posBC11"], 4, 4) }}">
                         </div>
                       </div>
                       <div class="row mb-2">
                         <label for="readNoSub2POSBC" class="col-form-label col-md-5 col-xxl-4">Nomor Sub SubPOS BC
                           1.1</label>
                         <div class="col-md-7 col-xxl-8">
-                          <input type="text" class="form-control" id="readNoSub2POSBC" name="readNoSub2POSBC">
+                          <input type="text" class="form-control" id="readNoSub2POSBC" name="readNoSub2POSBC"
+                          value="{{ substr($data["posBC11"], 8, 4) }}">
                         </div>
                       </div>
                     </div>
@@ -450,7 +451,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="row mb-1">
+                  <div class="row mb-3">
                     <div class="col-md col-xl-6 px-3 mb-3 mb-md-0">
                       <div class="row mb-2">
                         <h6 class="form-title">Detail Pengirim</h6>
@@ -515,6 +516,92 @@
                             value="{{ $data['tanggalHouse'] }}">
                         </div>
                       </div>
+                      <div class="row mb-2">
+                        <label for="readNoKantong" class="col-form-label col-md-5 col-xxl-4">Nomor Kantong</label>
+                        <div class="col-md-7 col-xxl-8">
+                          <input type="text" class="form-control" id="readNoKantong"
+                            name="readNoKantong" value="{{ $data['nomorKantong'] }}">
+                        </div>
+                      </div>
+                      <div class="row mb-2">
+                        <label for="readNoInvoice" class="col-form-label col-md-5 col-xxl-4">Nomor Invoice</label>
+                        <div class="col-md-7 col-xxl-8">
+                          <input type="text" class="form-control" id="readNoInvoice"
+                            name="readNoInvoice" value="{{ $data['nomorInvoice'] }}">
+                        </div>
+                      </div>
+                      <div class="row mb-2">
+                        <label for="readTglInvoice" class="col-form-label col-md-5 col-xxl-4">Tanggal Invoice</label>
+                        <div class="col-md-7 col-xxl-8">
+                          <input type="text" class="form-control" id="readTglInvoice"
+                            name="readTglInvoice" value="{{ $data['tanggalInvoice'] }}">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-md col-xl-6 px-3 mb-3 mb-md-0">
+                      <div class="row mb-2">
+                        <h6 class="form-title">Detail Nilai Tukar</h6>
+                      </div>
+                      <div class="row mb-2">
+                        <label for="readKodeValuta" class="col-form-label col-md-5 col-xxl-4">Mata Uang</label>
+                        <div class="col-md-7 col-xxl-8">
+                          <select class="form-select" id="readKodeValuta" name="readKodeValuta">
+                              <option value='AUD' @selected($data["kodeValuta"] == "AUD")>AUD - AUSTRALIAN DOLLAR</option>
+                              <option value='BND' @selected($data["kodeValuta"] == "BND")>BND - BRUNEI DOLLAR</option>
+                              <option value='CAD' @selected($data["kodeValuta"] == "CAD")>CAD - CANADIAN DOLLAR</option>
+                              <option value='CHF' @selected($data["kodeValuta"] == "CHF")>CHF - SWISS FRANC</option>
+                              <option value='CNY' @selected($data["kodeValuta"] == "CNY")>CNY - CHINA YUAN</option>
+                              <option value='DKK' @selected($data["kodeValuta"] == "DKK")>DKK - DANISH KRONE</option>
+                              <option value='EUR' @selected($data["kodeValuta"] == "EUR")>EUR - EURO</option>
+                              <option value='GBP' @selected($data["kodeValuta"] == "GBP")>GBP - BRITISH POUND</option>
+                              <option value='HKD' @selected($data["kodeValuta"] == "HKD")>HKD - HONGKONG DOLLAR</option>
+                              <option value='INR' @selected($data["kodeValuta"] == "INR")>INR - INDIA RUPEE</option>
+                              <option value='JPY' @selected($data["kodeValuta"] == "JPY")>JPY - JAPANESE YEN</option>
+                              <option value='KRW' @selected($data["kodeValuta"] == "KRW")>KRW - KOREAN WON</option>
+                              <option value='KWD' @selected($data["kodeValuta"] == "KWD")>KWD - KUWAITI DINAR</option>
+                              <option value='MYR' @selected($data["kodeValuta"] == "MYR")>MYR - MALAYSIAN RINGGIT</option>
+                              <option value='NOK' @selected($data["kodeValuta"] == "NOK")>NOK - NORWEGIAN KRONE</option>
+                              <option value='NZD' @selected($data["kodeValuta"] == "NZD")>NZD - NEW ZEALAND DOLLAR</option>
+                              <option value='PGK' @selected($data["kodeValuta"] == "PGK")>PGK - PAPUA N.G. KINA</option>
+                              <option value='PHP' @selected($data["kodeValuta"] == "PHP")>PHP - PHILIPPINES PESO</option>
+                              <option value='SAR' @selected($data["kodeValuta"] == "SAR")>SAR - SAUDI ARABIAN RIYAL</option>
+                              <option value='SEK' @selected($data["kodeValuta"] == "SEK")>SEK - SWEDISH KRONA</option>
+                              <option value='SGD' @selected($data["kodeValuta"] == "SGD")>SGD - SINGAPORE DOLLAR</option>
+                              <option value='THB' @selected($data["kodeValuta"] == "THB")>THB - THAI BATH</option>
+                              <option value='TWD' @selected($data["kodeValuta"] == "TWD")>TWD - TAIWAN DOLLAR</option>
+                              <option value='USD' @selected($data["kodeValuta"] == "USD")>USD - US DOLLAR </option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row mb-2">
+                        <label for="readNilaiTukar" class="col-form-label col-md-5 col-xxl-4">Nilai
+                          Tukar</label>
+                        <div class="col-md-7 col-xxl-8">
+                          <input type="text" class="form-control" id="readNilaiTukar"
+                            name="readNilaiTukar" value="{{ $data['ndpbm'] }}">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md col-xl-6 px-3 mb-3 mb-md-0">
+                      <div class="row mb-2">
+                        <h6 class="form-title">Detail Marketplace</h6>
+                      </div>
+                      <div class="row mb-2">
+                        <label for="readKodeMarketplace" class="col-form-label col-md-5 col-xxl-4">Kode Marketplace</label>
+                        <div class="col-md-7 col-xxl-8">
+                          <input class="form-control" id="readKodeMarketplace"
+                            name="readKodeMarketplace" value="{{ $data['kodeMarketplace'] }}">
+                        </div>
+                      </div>
+                      <div class="row mb-2">
+                        <label for="readNamaMarketplace" class="col-form-label col-md-5 col-xxl-4">Nama Marketplace</label>
+                        <div class="col-md-7 col-xxl-8">
+                          <input type="text" class="form-control" id="readNamaMarketplace"
+                            name="readNamaMarketplace" value="{{ $data['namaMarketplace'] }}">
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <hr>
@@ -532,9 +619,9 @@
                               <td>HSCODE</td>
                               <td>Uraian Barang</td>
                               <td>Negara Kirim</td>
+                              <td>Netto Barang</td>
                               <td>Fob Barang</td>
                               <td>Asuransi Barang</td>
-                              <td>Netto Barang</td>
                               <td>Freight Barang</td>
                               <td>CIF Barang</td>
                               <td>Jumlah Kemasan</td>
@@ -616,10 +703,10 @@
                         <h6 class="form-title">Detail Total Nilai/Berat</h6>
                       </div>
                       <div class="row mb-2">
-                        <label for="readKodeValuta" class="col-form-label col-md-5 col-xxl-4">Kurs</label>
+                        <label for="readTotalBrutoBarang" class="col-form-label col-md-5 col-xxl-4">Total Bruto Barang</label>
                         <div class="col-md-7 col-xxl-8">
-                          <input class="form-control" id="readKodeValuta" name="readKodeValuta"
-                            value="{{ $data['kodeValuta'] }}">
+                          <input disabled readonly type="text" class="form-control" id="readTotalBrutoBarang"
+                            name="readTotalBrutoBarang" value="{{ $data['bruto'] }}">
                         </div>
                       </div>
                       <div class="row mb-2">

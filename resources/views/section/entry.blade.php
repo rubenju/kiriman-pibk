@@ -230,7 +230,7 @@
                             </div>
                             <div class="mb-2">
                               <label for="inputKantorPabean" class="form-label">Kantor Pabean</label>
-                              <input type="text" class="form-control" id="inputKantorPabean" @disabled(!isset($data)) @isset($data)
+                              <input type="text" class="form-control" id="inputKantorPabean" name="inputKantorPabean" readonly @isset($data)
                                 value="{{ $data["kodeKantor"] }}"
                               @endisset>
                             </div>
@@ -350,13 +350,15 @@
                                 <div class="col-border">
                                   <div class="mb-2">
                                     <label for="inputNoPOSBC" class="form-label">Nomor POS BC 1.1</label>
-                                    <input type="text" class="form-control" id="inputNoPOSBC" name="inputNoPOSBC" @disabled(!isset($data)) @isset($data)
-                                      value="{{ $data["posBC11"] }}"
+                                    <input type="text" class="form-control" id="inputNoPOSBC" name="inputNoPOSBC" maxlength="4" @disabled(!isset($data)) @isset($data)
+                                      value="{{ substr($data["posBC11"], 0, 4) }}"
                                     @endisset>
                                   </div>
                                   <div class="mb-2">
                                     <label for="inputNoSubPOSBC" class="form-label">Nomor SubPOS BC 1.1</label>
-                                    <input type="text" class="form-control" id="inputNoSubPOSBC" name="inputNoSubPOSBC" @disabled(!isset($data))>
+                                    <input type="text" class="form-control" id="inputNoSubPOSBC" name="inputNoSubPOSBC" maxlength="4" @disabled(!isset($data)) @isset($data)
+                                      value="{{ substr($data["posBC11"], 4, 4) }}"
+                                    @endisset>
                                   </div>
                                 </div>
                               </div>
@@ -364,8 +366,9 @@
                                 <div class="col-border">
                                   <div class="mb-2">
                                     <label for="inputNoSub2POSBC" class="form-label">Nomor Sub SubPOS BC 1.1</label>
-                                    <input type="text" class="form-control" id="inputNoSub2POSBC"
-                                      name="inputNoSub2POSBC" @disabled(!isset($data))>
+                                    <input type="text" class="form-control" id="inputNoSub2POSBC" name="inputNoSub2POSBC" maxlength="4" @disabled(!isset($data)) @isset($data)
+                                      value="{{ substr($data["posBC11"], 8, 4) }}"
+                                    @endisset>
                                   </div>
                                 </div>
                               </div>
@@ -504,7 +507,7 @@
                               <label for="inputNegaraTujuan" class="form-label">Negara Tujuan</label>
                               <input type="text" class="form-control" id="inputNegaraTujuan"
                                 name="inputNegaraTujuan" @disabled(!isset($data)) @isset($data)
-                                  value="{{ $data["kodeNegaraAsal"] }}"
+                                  value="{{ $data["kodeNegaraTujuan"] }}"
                                 @endisset>
                             </div>
                           </div>
@@ -533,9 +536,29 @@
                             </div>
                             <div class="mb-2">
                               <label for="inputAsalNegara" class="form-label">Asal Negara</label>
-                              <input type="text" class="form-control" id="inputAsalNegara" name="inputAsalNegara" @disabled(!isset($data)) @isset($data)
-                                value="{{ $data["kodeNegaraPengirim"] }}"
+                              <input type="text" class="form-control" id="inputAsalNegara" name="inputAsalNegara" maxlength="13" @isset($data)
+                                value="{{ substr($data["nomorBarang"], -2) }}"
                               @endisset>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card card-form">
+                          <div class="card-body">
+                            <h6 class="card-title">Detail Marketplace</h6>
+                            <hr>
+                            <div class="mb-2">
+                              <label for="inputKodeMarketplace" class="form-label">Kode Marketplace</label>
+                              <input type="text" class="form-control" id="inputKodeMarketplace"
+                                name="inputKodeMarketplace" @disabled(!isset($data)) @isset($data)
+                                  value="{{ $data["kodeMarketplace"] }}"
+                                @endisset>
+                            </div>
+                            <div class="mb-2">
+                              <label for="inputNamaMarketplace" class="form-label">Nama Marketplace</label>
+                              <input type="text" class="form-control" id="inputNamaMarketplace"
+                                name="inputNamaMarketplace" @disabled(!isset($data)) @isset($data)
+                                  value="{{ $data["namaMarketplace"] }}"
+                                @endisset>
                             </div>
                           </div>
                         </div>
@@ -571,6 +594,27 @@
                               <input type="text" class="form-control" id="inputTglHouseBLAWB"
                                 name="inputTglHouseBLAWB" placeholder="yyyy-mm-dd" autocomplete="off" @disabled(!isset($data)) @isset($data)
                                   value="{{ $data["tanggalHouse"] }}"
+                                @endisset>
+                            </div>
+                            <div class="mb-2">
+                              <label for="inputNoKantong" class="form-label">Nomor Kantong</label>
+                              <input type="text" class="form-control" id="inputNoKantong"
+                                name="inputNoKantong" @disabled(!isset($data)) @isset($data)
+                                  value="{{ $data["nomorKantong"] }}"
+                                @endisset>
+                            </div>
+                            <div class="mb-2">
+                              <label for="inputNoInvoice" class="form-label">Nomor Invoice</label>
+                              <input type="text" class="form-control" id="inputNoInvoice"
+                                name="inputNoInvoice" @disabled(!isset($data)) @isset($data)
+                                  value="{{ $data["nomorInvoice"] }}"
+                                @endisset>
+                            </div>
+                            <div class="mb-2">
+                              <label for="inputTglInvoice" class="form-label">Tanggal Invoice</label>
+                              <input type="text" class="form-control" id="inputTglInvoice"
+                                name="inputTglInvoice" @disabled(!isset($data)) @isset($data)
+                                  value="{{ $data["tanggalInvoice"] }}"
                                 @endisset>
                             </div>
                           </div>
@@ -625,12 +669,69 @@
                             </div>
                           </div>
                         </div>
+                        <div class="card card-form">
+                          <div class="card-body">
+                            <h6 class="card-title">Detail Nilai Tukar</h6>
+                            <hr>
+                            <div class="mb-2">
+                              <label for="selectKodeValuta" class="form-label">Mata Uang</label>
+                              <select class="form-select" id="selectKodeValuta" name="selectKodeValuta">
+                                @isset($data)
+                                  <option value='AUD' @selected($data["kodeValuta"] == "AUD")>AUD - AUSTRALIAN DOLLAR</option>
+                                  <option value='BND' @selected($data["kodeValuta"] == "BND")>BND - BRUNEI DOLLAR</option>
+                                  <option value='CAD' @selected($data["kodeValuta"] == "CAD")>CAD - CANADIAN DOLLAR</option>
+                                  <option value='CHF' @selected($data["kodeValuta"] == "CHF")>CHF - SWISS FRANC</option>
+                                  <option value='CNY' @selected($data["kodeValuta"] == "CNY")>CNY - CHINA YUAN</option>
+                                  <option value='DKK' @selected($data["kodeValuta"] == "DKK")>DKK - DANISH KRONE</option>
+                                  <option value='EUR' @selected($data["kodeValuta"] == "EUR")>EUR - EURO</option>
+                                  <option value='GBP' @selected($data["kodeValuta"] == "GBP")>GBP - BRITISH POUND</option>
+                                  <option value='HKD' @selected($data["kodeValuta"] == "HKD")>HKD - HONGKONG DOLLAR</option>
+                                  <option value='INR' @selected($data["kodeValuta"] == "INR")>INR - INDIA RUPEE</option>
+                                  <option value='JPY' @selected($data["kodeValuta"] == "JPY")>JPY - JAPANESE YEN</option>
+                                  <option value='KRW' @selected($data["kodeValuta"] == "KRW")>KRW - KOREAN WON</option>
+                                  <option value='KWD' @selected($data["kodeValuta"] == "KWD")>KWD - KUWAITI DINAR</option>
+                                  <option value='MYR' @selected($data["kodeValuta"] == "MYR")>MYR - MALAYSIAN RINGGIT</option>
+                                  <option value='NOK' @selected($data["kodeValuta"] == "NOK")>NOK - NORWEGIAN KRONE</option>
+                                  <option value='NZD' @selected($data["kodeValuta"] == "NZD")>NZD - NEW ZEALAND DOLLAR</option>
+                                  <option value='PGK' @selected($data["kodeValuta"] == "PGK")>PGK - PAPUA N.G. KINA</option>
+                                  <option value='PHP' @selected($data["kodeValuta"] == "PHP")>PHP - PHILIPPINES PESO</option>
+                                  <option value='SAR' @selected($data["kodeValuta"] == "SAR")>SAR - SAUDI ARABIAN RIYAL</option>
+                                  <option value='SEK' @selected($data["kodeValuta"] == "SEK")>SEK - SWEDISH KRONA</option>
+                                  <option value='SGD' @selected($data["kodeValuta"] == "SGD")>SGD - SINGAPORE DOLLAR</option>
+                                  <option value='THB' @selected($data["kodeValuta"] == "THB")>THB - THAI BATH</option>
+                                  <option value='TWD' @selected($data["kodeValuta"] == "TWD")>TWD - TAIWAN DOLLAR</option>
+                                  <option value='USD' @selected($data["kodeValuta"] == "USD")>USD - US DOLLAR </option>
+                                @endisset
+                              </select>
+                            </div>
+                            <div class="mb-2">
+                              <label for="inputNilaiTukar" class="form-label">Nilai Tukar</label>
+                              <input type="text" class="form-control" id="inputNilaiTukar"
+                                name="inputNilaiTukar" @isset($data)
+                                  value="{{ $data["ndpbm"] }}"
+                                @endisset>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <div class="col-md col-xl-6">
                         <div class="card card-form">
                           <div class="card-body">
                             <h6 class="card-title">Detail Nilai/Berat</h6>
                             <hr>
+                            
+                            <div class="mb-2">
+                              <label for="inputBrutoBarang" class="form-label">Total Bruto Barang</label>
+                              <input type="text" class="form-control" id="inputBrutoBarang"
+                                name="inputBrutoBarang" @isset($data)
+                                  value="{{ $data["bruto"] }}"
+                                @endisset>
+                            </div>
+                            <div class="mb-2">
+                              <label for="inputNettoBarang" class="form-label">Netto Barang</label>
+                              <input type="text" class="form-control form-barang" id="inputNettoBarang"
+                                name="inputNettoBarang">
+                            </div>
                             <div class="mb-2">
                               <label for="inputFobBarang" class="form-label">Fob Barang</label>
                               <input type="text" class="form-control form-barang" id="inputFobBarang" name="inputFobBarang">
@@ -639,11 +740,6 @@
                               <label for="inputAsuransiBarang" class="form-label">Asuransi Barang</label>
                               <input type="text" class="form-control form-barang" id="inputAsuransiBarang"
                                 name="inputAsuransiBarang">
-                            </div>
-                            <div class="mb-2">
-                              <label for="inputNettoBarang" class="form-label">Netto Barang</label>
-                              <input type="text" class="form-control form-barang" id="inputNettoBarang"
-                                name="inputNettoBarang">
                             </div>
                             <div class="mb-2">
                               <label for="inputFreightBarang" class="form-label">Freight Barang</label>
@@ -714,7 +810,7 @@
                       <div class="col-md col-xl-6">
                         <div class="card card-form ">
                           <div class="card-body">
-                            <h6 class="card-title">Detail</h6>
+                            <h6 class="card-title">Detail SKEP</h6>
                             <hr>
                             <div class="mb-2">
                               <label for="inputNomorSkep" class="form-label">Nomor Skep</label>
@@ -848,10 +944,12 @@
                       </div>
                     </div>
                     <div class="row justify-content-between box-style py-2">
-                      <div class="col-6"><button type="button" class="btn" id="btn-delete"><i
+                      <div class="col-4 text-start"><button type="button" class="btn" id="btn-delete"><i
                             class="bi bi-backspace-fill me-2"></i>Delete Item</button></div>
-                      <div class="col-6 text-end"><button type="button" class="btn" id="btn-add"><i
-                            class="bi bi-save-fill me-2"></i>Add Item</button></div>
+                      <div class="col-4 text-center"><button style="display: none;" type="button" class="btn btn-outline-secondary" id="btn-save-item"><i
+                        class="bi bi-save-fill me-2"></i>Save Item</button></div>
+                      <div class="col-4 text-end"><button type="button" class="btn" id="btn-add"><i
+                            class="bi bi-plus-square-fill me-2"></i>Add Item</button></div>
                     </div>
                     <div class="row">
                       <div class="col">
@@ -860,14 +958,15 @@
                             <thead class="fw-semibold text-center">
                               <tr>
                                 <td><input type="checkbox" id="selectAll"></td>
+                                <td>Edit Item</td>
                                 <td>No</td>
                                 <td>Seri</td>
                                 <td>HSCODE</td>
                                 <td>Uraian Barang</td>
                                 <td>Negara Kirim</td>
+                                <td>Netto Barang</td>
                                 <td>Fob Barang</td>
                                 <td>Asuransi Barang</td>
-                                <td>Netto Barang</td>
                                 <td>Freight Barang</td>
                                 <td>CIF Barang</td>
                                 <td>Jumlah Kemasan</td>
@@ -904,6 +1003,7 @@
                                 @foreach ($data["barang"] as $data_barang)
                                   <tr>
                                     <td><input type="checkbox" class="selectRow"></td>
+                                    <td><button type="button" class="btn btn-sm btn-outline-secondary btn-edit" data-id="">Edit</button></td>
                                     <td>{{ $x++ }}</td>
                                     <td>{{ $data_barang["seriBarang"] }}</td>
                                     <td>{{ $data_barang["hsCode"] }}</td>
@@ -941,80 +1041,6 @@
                                   </tr>
                                 @endforeach
                               @endisset
-                              {{-- <tr>
-                                <td><input type="checkbox" class="selectRow"></td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>320120320</td>
-                                <td>Bambu runcing</td>
-                                <td>RU</td>
-                                <td>1</td>
-                                <td>Package</td>
-                                <td>1</td>
-                                <td>Pieces</td>
-                                <td>0</td>
-                                <td>100</td>
-                                <td>10</td>
-                                <td>1</td>
-                                <td>10</td>
-                                <td>120</td>
-                                <td>1</td>
-                                <td>11</td>
-                                <td>20</td>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>11</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                              </tr>
-                              <tr>
-                                <td><input type="checkbox" class="selectRow"></td>
-                                <td>2</td>
-                                <td>1</td>
-                                <td>320120320</td>
-                                <td>Piring cantik</td>
-                                <td>BR</td>
-                                <td>12</td>
-                                <td>Package</td>
-                                <td>7</td>
-                                <td>Pieces</td>
-                                <td>0</td>
-                                <td>100</td>
-                                <td>10</td>
-                                <td>1</td>
-                                <td>10</td>
-                                <td>120</td>
-                                <td>1</td>
-                                <td>11</td>
-                                <td>20</td>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>11</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                              </tr> --}}
                             </tbody>
                           </table>
                         </div>
@@ -1026,37 +1052,6 @@
                           <div class="card-body">
                             <h6 class="card-title">Detail Total Nilai/Berat</h6>
                             <hr>
-                            <div class="mb-2">
-                              <label for="selectKodeValuta" class="form-label">Kurs</label>
-                              <select class="form-select" id="selectKodeValuta" name="selectKodeValuta">
-                                @isset($data)
-                                  <option value='AUD' @selected($data["kodeValuta"] == "AUD")>AUD - AUSTRALIAN DOLLAR</option>
-                                  <option value='BND' @selected($data["kodeValuta"] == "BND")>BND - BRUNEI DOLLAR</option>
-                                  <option value='CAD' @selected($data["kodeValuta"] == "CAD")>CAD - CANADIAN DOLLAR</option>
-                                  <option value='CHF' @selected($data["kodeValuta"] == "CHF")>CHF - SWISS FRANC</option>
-                                  <option value='CNY' @selected($data["kodeValuta"] == "CNY")>CNY - CHINA YUAN</option>
-                                  <option value='DKK' @selected($data["kodeValuta"] == "DKK")>DKK - DANISH KRONE</option>
-                                  <option value='EUR' @selected($data["kodeValuta"] == "EUR")>EUR - EURO</option>
-                                  <option value='GBP' @selected($data["kodeValuta"] == "GBP")>GBP - BRITISH POUND</option>
-                                  <option value='HKD' @selected($data["kodeValuta"] == "HKD")>HKD - HONGKONG DOLLAR</option>
-                                  <option value='INR' @selected($data["kodeValuta"] == "INR")>INR - INDIA RUPEE</option>
-                                  <option value='JPY' @selected($data["kodeValuta"] == "JPY")>JPY - JAPANESE YEN</option>
-                                  <option value='KRW' @selected($data["kodeValuta"] == "KRW")>KRW - KOREAN WON</option>
-                                  <option value='KWD' @selected($data["kodeValuta"] == "KWD")>KWD - KUWAITI DINAR</option>
-                                  <option value='MYR' @selected($data["kodeValuta"] == "MYR")>MYR - MALAYSIAN RINGGIT</option>
-                                  <option value='NOK' @selected($data["kodeValuta"] == "NOK")>NOK - NORWEGIAN KRONE</option>
-                                  <option value='NZD' @selected($data["kodeValuta"] == "NZD")>NZD - NEW ZEALAND DOLLAR</option>
-                                  <option value='PGK' @selected($data["kodeValuta"] == "PGK")>PGK - PAPUA N.G. KINA</option>
-                                  <option value='PHP' @selected($data["kodeValuta"] == "PHP")>PHP - PHILIPPINES PESO</option>
-                                  <option value='SAR' @selected($data["kodeValuta"] == "SAR")>SAR - SAUDI ARABIAN RIYAL</option>
-                                  <option value='SEK' @selected($data["kodeValuta"] == "SEK")>SEK - SWEDISH KRONA</option>
-                                  <option value='SGD' @selected($data["kodeValuta"] == "SGD")>SGD - SINGAPORE DOLLAR</option>
-                                  <option value='THB' @selected($data["kodeValuta"] == "THB")>THB - THAI BATH</option>
-                                  <option value='TWD' @selected($data["kodeValuta"] == "TWD")>TWD - TAIWAN DOLLAR</option>
-                                  <option value='USD' @selected($data["kodeValuta"] == "USD")>USD - US DOLLAR </option>
-                                @endisset
-                              </select>
-                            </div>
                             <div class="mb-2">
                               <label for="inputTotalFobBarang" class="form-label">Total Fob Barang</label>
                               <input type="text" class="form-control" id="inputTotalFobBarang" name="inputTotalFobBarang" disabled readonly @isset($data)
@@ -1407,7 +1402,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="row mb-1">
+                        <div class="row mb-3">
                           <div class="col-md col-xl-6 px-3 mb-3 mb-md-0">
                             <div class="row mb-2">
                               <h6 class="form-title">Detail Pengirim</h6>
@@ -1472,6 +1467,68 @@
                                   name="readTglHouseBLAWB">
                               </div>
                             </div>
+                            <div class="row mb-2">
+                              <label for="readNoKantong" class="col-form-label col-md-5 col-xxl-4">Nomor Kantong</label>
+                              <div class="col-md-7 col-xxl-8">
+                                <input disabled readonly type="text" class="form-control" id="readNoKantong"
+                                  name="readNoKantong">
+                              </div>
+                            </div>
+                            <div class="row mb-2">
+                              <label for="readNoInvoice" class="col-form-label col-md-5 col-xxl-4">Nomor Invoice</label>
+                              <div class="col-md-7 col-xxl-8">
+                                <input disabled readonly type="text" class="form-control" id="readNoInvoice"
+                                  name="readNoInvoice">
+                              </div>
+                            </div>
+                            <div class="row mb-2">
+                              <label for="readTglInvoice" class="col-form-label col-md-5 col-xxl-4">Tanggal Invoice</label>
+                              <div class="col-md-7 col-xxl-8">
+                                <input disabled readonly type="text" class="form-control" id="readTglInvoice"
+                                  name="readTglInvoice">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <div class="col-md col-xl-6 px-3 mb-3 mb-md-0">
+                            <div class="row mb-2">
+                              <h6 class="form-title">Detail Nilai Tukar</h6>
+                            </div>
+                            <div class="row mb-2">
+                              <label for="readKodeValuta" class="col-form-label col-md-5 col-xxl-4">Mata Uang</label>
+                              <div class="col-md-7 col-xxl-8">
+                                <input disabled readonly class="form-control" id="readKodeValuta"
+                                  name="readKodeValuta">
+                              </div>
+                            </div>
+                            <div class="row mb-2">
+                              <label for="readNilaiTukar" class="col-form-label col-md-5 col-xxl-4">Nilai
+                                Tukar</label>
+                              <div class="col-md-7 col-xxl-8">
+                                <input disabled readonly type="text" class="form-control" id="readNilaiTukar"
+                                  name="readNilaiTukar">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md col-xl-6 px-3 mb-3 mb-md-0">
+                            <div class="row mb-2">
+                              <h6 class="form-title">Detail Marketplace</h6>
+                            </div>
+                            <div class="row mb-2">
+                              <label for="readKodeMarketplace" class="col-form-label col-md-5 col-xxl-4">Kode Marketplace</label>
+                              <div class="col-md-7 col-xxl-8">
+                                <input disabled readonly class="form-control" id="readKodeMarketplace"
+                                  name="readKodeMarketplace">
+                              </div>
+                            </div>
+                            <div class="row mb-2">
+                              <label for="readNamaMarketplace" class="col-form-label col-md-5 col-xxl-4">Nama Marketplace</label>
+                              <div class="col-md-7 col-xxl-8">
+                                <input disabled readonly type="text" class="form-control" id="readNamaMarketplace"
+                                  name="readNamaMarketplace">
+                              </div>
+                            </div>
                           </div>
                         </div>
                         <hr>
@@ -1529,10 +1586,17 @@
                               <h6 class="form-title">Detail Total Nilai/Berat</h6>
                             </div>
                             <div class="row mb-2">
-                              <label for="readKodeValuta" class="col-form-label col-md-5 col-xxl-4">Kurs</label>
+                              <label for="readTotalBrutoBarang" class="col-form-label col-md-5 col-xxl-4">Total Bruto Barang</label>
                               <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly class="form-control" id="readKodeValuta"
-                                  name="readKodeValuta">
+                                <input disabled readonly type="text" class="form-control" id="readTotalBrutoBarang"
+                                  name="readTotalBrutoBarang">
+                              </div>
+                            </div>
+                            <div class="row mb-2">
+                              <label for="readTotalNettoBarang" class="col-form-label col-md-5 col-xxl-4">Total Netto Barang</label>
+                              <div class="col-md-7 col-xxl-8">
+                                <input disabled readonly type="text" class="form-control" id="readTotalNettoBarang"
+                                  name="readTotalNettoBarang">
                               </div>
                             </div>
                             <div class="row mb-2">
@@ -1547,13 +1611,6 @@
                               <div class="col-md-7 col-xxl-8">
                                 <input disabled readonly type="text" class="form-control" id="readTotalAsuransiBarang"
                                   name="readTotalAsuransiBarang">
-                              </div>
-                            </div>
-                            <div class="row mb-2">
-                              <label for="readTotalNettoBarang" class="col-form-label col-md-5 col-xxl-4">Total Netto Barang</label>
-                              <div class="col-md-7 col-xxl-8">
-                                <input disabled readonly type="text" class="form-control" id="readTotalNettoBarang"
-                                  name="readTotalNettoBarang">
                               </div>
                             </div>
                             <div class="row mb-2">
@@ -1685,6 +1742,27 @@
         }
       }
 
+      $("#inputFobBarang, #inputAsuransiBarang, #inputFreightBarang").change(function (e) {
+        calculateNilai()
+      });
+
+      // $("").change(function (e) {
+      //   calculateNilai()
+      // });
+
+      // $("").change(function (e) {
+      //   calculateNilai()
+      // });
+
+      function calculateNilai() {
+        let fob = isNaN(parseFloat($("#inputFobBarang").val())) ? 0 : parseFloat($("#inputFobBarang").val());
+        console.log(fob);
+        let asuransi = isNaN(parseFloat($("#inputAsuransiBarang").val())) ? 0 : parseFloat($("#inputAsuransiBarang").val());
+        let freight = isNaN(parseFloat($("#inputFreightBarang").val())) ? 0 : parseFloat($("#inputFreightBarang").val());
+        let cif = fob + asuransi + freight;
+        $("#inputCIFBarang").val(cif);
+      }
+
       $('#inputTglBC').datepicker({
         dateFormat: "yy-mm-dd",
         changeMonth: true,
@@ -1732,7 +1810,7 @@
           type: "post",
           url: "{{ route('addNewTransaction') }}",
           data: {
-            noBarang : noBarang,
+            noBarcode: noBarang,
             "_token": "{{ csrf_token() }}"
           },
           dataType: "json",
@@ -1741,9 +1819,25 @@
           },
           success: function(response) {
             $("#preloader").hide()
-            let url = "{{ route('showForm', ':id') }}"
-            url = url.replace(':id', noBarang)
-            document.location.replace(url)
+            console.log(response);
+            if(response.status==1) {
+              Swal.fire({
+                title: 'Success!',
+                text: response.message,
+                icon: 'success'
+              })
+              .then(function() {
+                let url = "{{ route('showForm', ':id') }}"
+                url = url.replace(':id', response.transref)
+                document.location.replace(url)
+              })
+            } else {
+              Swal.fire({
+                title: 'Failed!',
+                text: response.message,
+                icon: 'error'
+              })
+            }
           },
           error: function(xhr, status, error) {
             $("#preloader").hide()
@@ -1777,12 +1871,8 @@
 
         if (next_step) {
           let data = setObject(getTableBarangObject())
-          let body = {
-            data: data,
-            "_token": "{{ csrf_token() }}"
-          }
-          console.log(body);
-          saveObject(body)
+          console.log(data)
+          saveObject(data)
           parent_fieldset.fadeOut(400, function() {
             current_active_step.removeClass('active').addClass('activated').next().addClass('active')
             $(this).next().fadeIn()
@@ -1806,14 +1896,6 @@
       $('#btn-save').on('click', function(e) {
         e.preventDefault();
 
-        // $(this).find('input[type="text"], input[type="date"], select').each(function() {
-        //   if ($(this).val() == "") {
-        //     e.preventDefault();
-        //     $(this).addClass('input-error');
-        //   } else {
-        //     $(this).removeClass('input-error');
-        //   }
-        // });
       });
 
       $('#btn-send').on('click', function(e) {
@@ -1852,15 +1934,14 @@
 
         let newRow = $('<tr>')
         newRow.append('<td><input type="checkbox" class="selectRow"></td>');
+        newRow.append('<td><button type="button" class="btn btn-sm btn-outline-secondary btn-edit" data-id="">Edit</button></td>')
         newRow.append(`<td>${rowCount + 1}</td>`);
         formBarang.each(function () {
-          console.log($(this).val());
+          // console.log($(this).val());
           newRow.append('<td>' + $(this).val() + '</td>');
         })
         newRow.append('</tr>')
 
-        
-        
         // let inputSeriBarang = $('#inputSeriBarang').val();
         // let inputHSCODE = $('#inputHSCODE').val();
         // let inputUraianBarang = $('#inputUraianBarang').val();
@@ -1921,13 +2002,111 @@
         
         $("#table-barang tbody").append(newRow);
         sumDataBarang();
-        
-        // Swal.fire({
-        //   title: 'Success!',
-        //   text: 'Insert success',
-        //   icon: 'success'
-        // });
+        $('.form-barang').val('')
       })
+
+      $("#table-barang").on('click', 'tbody tr .btn-edit', function (e) { 
+        e.preventDefault();
+        
+        let row = $(this).parents('tr')
+        let index = row.find('td:eq(2)').text()
+        index = parseInt(index) - 1
+        let cellContent = []
+        row.find('td:gt(2)').each(function () {
+          cellContent.push($(this).text())
+        })
+        let formBarang = $(".form-barang")
+        let i=0;
+        formBarang.each(function () {
+          $(this).val(cellContent[i])
+          i++;
+        })
+
+        $('#btn-save-item').attr('data-id', index);
+        $('#btn-save-item').show();
+      });
+
+      $('#btn-save-item').click(function (e) { 
+        e.preventDefault();
+
+        let index = $(this).attr('data-id');
+        let row = $('#table-barang tbody').find(`tr:eq(${index})`);
+        // console.log(row);
+        let formContent = []
+        let formBarang = $(".form-barang")
+        formBarang.each(function () {
+          formContent.push($(this).val())
+        })
+        
+        let i=0;
+        row.find('td:gt(2)').each(function () {
+          $(this).text(formContent[i])
+          i++;
+        })
+        
+        formBarang.val('');
+        $('#btn-save-item').hide();
+        callToast('Success', 'Item diubah', 2)
+      });
+
+      function callToast(title, body, type) {
+        $("#liveToast").removeClass();
+        $("#toast-header").removeClass();
+        
+        switch(type) {
+          case 0: 
+            $("#liveToast").addClass("toast text-bg-danger bg-gradient bg-opacity-75 border-0");
+            $("#toast-header").addClass("toast-header text-bg-danger bg-gradient bg-opacity-75");
+            break;
+          case 1:
+            $("#liveToast").addClass("toast text-bg-warning bg-gradient bg-opacity-75 border-0");
+            $("#toast-header").addClass("toast-header text-bg-warning bg-gradient bg-opacity-75");
+            break;
+          case 2:
+            $("#liveToast").addClass("toast text-bg-success bg-gradient bg-opacity-75 border-0");
+            $("#toast-header").addClass("toast-header text-bg-success bg-gradient bg-opacity-75");
+            break;
+        }
+
+        $("#toast-title").text(title)
+        $("#liveToast .toast-body").text(body)
+
+        const toastLiveExample = $("#liveToast")
+        const toast = new bootstrap.Toast(toastLiveExample)
+        toast.show()
+      }
+
+      // $("#inputNomorBarang").focusout(function(e) {
+      //   e.preventDefault()
+      //   getProfilPemberitahu("010016202093000")
+      // })
+
+      function getProfilPemberitahu(npwp) {
+        $.ajax({
+          type: "get",
+          url: "{{ route('getProfil') }}",
+          data: {
+            npwp: npwp
+          },
+          dataType: "json",
+          beforeSend: function() {
+            $("#preloader").show()
+          },
+          success: function (response) {
+            $("#preloader").hide()
+            if(response.status == 1) {
+              callToast("Success", response.message, 2)
+            } else {
+              callToast("Failed", response.message, 1)
+            }
+          },
+          error: function(xhr, status, error) {
+            $("#preloader").hide()
+            alert(xhr.responseText)
+          }
+
+        });
+      }
 
       function sumDataBarang() {
         let sumFob=0, sumAsuransi=0, sumNetto=0, sumFreight=0, sumCif=0, sumBm=0, 
@@ -2011,13 +2190,13 @@
                 row.kodeNegaraAsal = $(this).text();
                 break;
               case 6:
-                row.fobBarang = $(this).text();
+                row.nettoBarang = $(this).text();
                 break;
               case 7:
-                row.asuransiBarang = $(this).text();
+                row.fobBarang = $(this).text();
                 break;
               case 8:
-                row.nettoBarang = $(this).text();
+                row.asuransiBarang = $(this).text();
                 break;
               case 9:
                 row.freightBarang = $(this).text();
@@ -2142,15 +2321,22 @@
         $("#readTglMasterBLAWB").val($('#inputTglMasterBLAWB').val());
         $("#readNoHouseBLAWB").val($('#inputNoHouseBLAWB').val());
         $("#readTglHouseBLAWB").val($('#inputTglHouseBLAWB').val());
+        $("#readNoKantong").val($('#inputNoKantong').val());
+        $("#readNoInvoice").val($('#inputNoInvoice').val());
+        $("#readTglInvoice").val($('#inputTglInvoice').val());
+        $("#readKodeValuta").val($("#selectKodeValuta option[value='" + $('#selectKodeValuta').val() + "']").text());
+        $("#readNilaiTukar").val($('#inputNilaiTukar').val());
+        $("#readKodeMarketplace").val($('#inputKodeMarketplace').val());
+        $("#readNamaMarketplace").val($('#inputNamaMarketplace').val());
         $("#table-barang-final").html($("#table-barang").html());
-        $("#table-barang-final tr").each(function(){
+        $("#table-barang-final tr").each(function() {
+          $(this).find("td:first").remove();
           $(this).find("td:first").remove();
         });
-        console.log($('#selectKodeValuta').val());
-        $("#readKodeValuta").val($("#selectKodeValuta option[value='" + $('#selectKodeValuta').val() + "']").text());
+        $("#readTotalBrutoBarang").val($('#inputBrutoBarang').val());
+        $("#readTotalNettoBarang").val($('#inputTotalNettoBarang').val());
         $("#readTotalFobBarang").val($('#inputTotalFobBarang').val());
         $("#readTotalAsuransiBarang").val($('#inputTotalAsuransiBarang').val());
-        $("#readTotalNettoBarang").val($('#inputTotalNettoBarang').val());
         $("#readTotalFreightBarang").val($('#inputTotalFreightBarang').val());
         $("#readTotalCIFBarang").val($('#inputTotalCIFBarang').val());
         $("#readTotalBm").val($('#inputTotalBm').val());
@@ -2164,11 +2350,11 @@
 
       function setObject(table) {
         body = {
-          "bruto": "1",
-          "ndpbm": "15000",
+          "bruto": $("input[name=inputBrutoBarang]").val(),
+          "ndpbm": $("input[name=inputNilaiTukar]").val(),
           "netto": $("input[name=inputTotalNettoBarang]").val(),
           "barang": table,
-          "posBC11": $("input[name=inputNoPOSBC]").val(),
+          "posBC11": $("input[name=inputNoPOSBC]").val()+$("input[name=inputNoSubPOSBC]").val()+$("input[name=inputNoSub2POSBC]").val(),
           "totalBm": $("input[name=inputTotalBm]").val(),
           "cifTotal": $("input[name=inputTotalCIFBarang]").val(),
           "fobTotal": $("input[name=inputTotalFobBarang]").val(),
@@ -2179,7 +2365,7 @@
           "totalBmad": $("input[name=inputTotalBmad]").val(),
           "totalBmtp": $("input[name=inputTotalBmtp]").val(),
           "kodeGudang": $("#selectGudang").val(),
-          "kodeKantor": $("#selectKantorSerah").val(),
+          "kodeKantor": $("input[name=inputKantorPabean]").val(),
           "kodeValuta": $("#selectJenisIDPenerima").val(),
           "nomorHouse": $("input[name=inputNoHouseBLAWB]").val(),
           "totalPpnbm": $("input[name=inputTotalPpnbm").val(),
@@ -2187,13 +2373,13 @@
           "nomorBarang": $("input[name=inputNomorBarang]").val(),
           "nomorFlight": $("input[name=inputNomorAngkutan]").val(),
           "nomorMaster": $("input[name=inputNoMasterBLAWB]").val(),
-          "npwpBilling": "010016202093000",
+          "npwpBilling": $("input[name=inputNoIDPenerima]").val(),
           "tanggalBC11": $("input[name=inputTglBC]").val(),
           "freightTotal": $("input[name=inputTotalFreightBarang]").val(),
           "namaPenerima": $("input[name=inputNamaPenerima]").val(),
           "namaPengirim": $("input[name=inputNamaPengirim]").val(),
-          "nomorInvoice": "001",
-          "nomorKantong": "ID2113926731280",
+          "nomorInvoice": $("input[name=inputNoInvoice]").val(),
+          "nomorKantong": $("input[name=inputNoKantong]").val(),
           "tanggalHouse": $("input[name=inputTglHouseBLAWB]").val(),
           "totalTagihan": $("input[name=inputTotalTagihan]").val(),
           "asuransiTotal": $("input[name=inputTotalAsuransiBarang]").val(),
@@ -2205,11 +2391,12 @@
           "kodePelBongkar": $("#selectPelabuhanBongkar").val(),
           "namaPengangkut": $("input[name=inputNamaPengangkut]").val(),
           "nomorIdentitas": $("input[name=inputNoIDPenerima]").val(),
-          "tanggalInvoice": "2022-07-01",
+          "tanggalInvoice": $("input[name=inputTglInvoice]").val(),
           "kodeJenisAngkut": $("#selectJenisAngkutan").val(),
-          "kodeMarketplace": "-",
-          "namaMarketplace": "-",
+          "kodeMarketplace": $("input[name=inputKodeMarketplace]").val(),
+          "namaMarketplace": $("input[name=inputNamaMarketplace]").val(),
           "npwpPemberitahu": $("input[name=inputNoIDPemberitahu]").val(),
+          "kodeNegaraTujuan": $("input[name=inputNegaraTujuan]").val(),
           "nomorTelpPenerima": $("input[name=inputNoTeleponPenerima]").val(),
           "kodeJenisIdentitas": $("#selectJenisIDPenerima").val(),
           "kodeNegaraPengirim": $("input[name=inputAsalNegara]").val(),
@@ -2219,19 +2406,41 @@
       }
 
       function saveObject(data) {
+        let pathArr = window.location.pathname.split('/')
+
         $.ajax({
           type: "post",
           url: "{{ route('saveObject') }}",
-          data: data,
+          data: {
+            barcode: $("#inputNomorBarang").val(),
+            uuid: pathArr[2],
+            payload: data,
+            "_token": "{{ csrf_token() }}"
+          },
           dataType: "json",
           beforeSend: function() {
             $("#preloader").show()
           },
           success: function(response) {
             $("#preloader").hide()
-            console.log(response);
-            console.log('object saved');
-            setConfirmationForm();
+            if(response.status == 1) {
+              callToast("Success", response.message, 2)
+              // Swal.fire({
+              //   title: 'Success!',
+              //   text: response.message,
+              //   icon: 'success'
+              // })
+              console.log('object saved');
+              console.log(response.data);
+              setConfirmationForm();
+            } else {
+              callToast("Failed", response.message, 0)
+              // Swal.fire({
+              //   title: 'Failed!',
+              //   text: response.message,
+              //   icon: 'error'
+              // })
+            }
           },
           error: function(xhr, status, error) {
             $("#preloader").hide()
