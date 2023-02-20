@@ -147,6 +147,10 @@ button {
   border: 1px solid #4982D7;
 }
 
+.sidebar-nav .nav-item a.active {
+  background-color: #ecf4ff;
+}
+
 #btn-delete:hover {
   background: #f18a8a;
   color: white;

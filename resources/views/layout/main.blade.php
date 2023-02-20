@@ -6,9 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Aplikasi Kiriman PIBK</title>
   <!-- Favicons -->
-  <link href="/assets/img/favicon.png" rel="icon">
-  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
+  <link href="/assets/img/posindonesia-logo.png" rel="icon">
+  
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -54,7 +53,7 @@
       </nav>
     </div>
     @yield('contents')
-    <div class="toast-container position-fixed bottom-0 end-50 p-3">
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
       <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header" id="toast-header">
           {{-- <img src="..." class="rounded me-2" alt="..."> --}}

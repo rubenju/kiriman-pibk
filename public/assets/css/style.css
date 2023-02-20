@@ -661,6 +661,11 @@ h6 {
   .toggle-sidebar .sidebar {
     left: 0;
   }
+
+  .toggle-sidebar #header {
+    margin-left: 300px;
+  }
+
 }
 
 @media (min-width: 1200px) {
@@ -678,7 +683,7 @@ h6 {
   .toggle-sidebar .sidebar {
     /* left: -300px; */
     left: -200px;
-    padding-left: 222.5px;
+    padding-left: 222px;
   }
 
   .sidebar .nav-link span {
