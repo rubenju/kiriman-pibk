@@ -34,15 +34,15 @@ Route::get('/entry/{id}', [entryController::class, 'entry'])->name('showForm');
 Route::get('/profil', [entryController::class, 'getProfilPemberitahu'])->name('getProfil');
 
 //Detail
-Route::get('/send/{id}', [browseController::class, 'sendData'])->name('sendData');
-Route::get('/save/{id}', [browseController::class, 'saveData'])->name('saveData');
+Route::post('/send', [browseController::class, 'sendData'])->name('sendData');
+Route::post('/save', [browseController::class, 'saveData'])->name('saveData');
 Route::get('/detail/{id}', [browseController::class, 'showDetail'])->name('showDetail');
 Route::get('/detail2/{id}', [browseController::class, 'showDetail2'])->name('showDetail2');
 Route::get('/status/{id}', [browseController::class, 'getStatus'])->name('getStatus');
 
 //Browse
 Route::get('/browse', [browseController::class, 'show']);
-Route::post('/get-data', [browseController::class, 'getData'])->name('getData');
+Route::post('/get-data-by-date', [browseController::class, 'getData'])->name('getData');
 Route::get('/edit/{id}', [browseController::class, 'editData'])->name('editData');
 
 

@@ -57,15 +57,16 @@
                             <div class="mb-2">
                               <label for="inputNomorBarang" class="form-label">Nomor Barang</label>
                               <div class="input-group">
-                                <input type="text" class="form-control" id="inputNomorBarang" name="inputNomorBarang"
+                                <input type="text" class="form-control" id="inputNomorBarang" name="inputNomorBarang" maxlength="13"
                                   @isset($data)
                                   value="{{ $data['nomorBarang'] }}" readonly
                                 @endisset>
                                 @if (!isset($data))
                                   <button type="button" id="btnSubmitId" class="btn btn-outline-secondary"
-                                    style="border: 1px solid #ced4da;">Submit</button>
+                                    style="border: 1px solid #ced4da;" disabled>Submit</button>
                                 @endif
                               </div>
+                              <p class="small" id="invalid-barcode" style="color: #f35b3f; font-size: 12px; display: none;">Barcode Invalid</p>
                             </div>
                             <div class="mb-2">
                               <label for="selectKantorSerah" class="form-label">Kantor Serah</label>
@@ -454,7 +455,7 @@
                               <input type="text" class="form-control" id="inputNamaPemberitahu"
                                 name="inputNamaPemberitahu" @disabled(!isset($data))
                                 @isset($data)
-                                value=""
+                                value="PT. Pos Indonesia (Persero)"
                               @endisset>
                             </div>
                             <div class="mb-2">
@@ -462,7 +463,7 @@
                               <input type="text" class="form-control" id="inputAlamatPemberitahu"
                                 name="inputAlamatPemberitahu" @disabled(!isset($data))
                                 @isset($data)
-                                value=""
+                                value="Jl. Lapangan Banteng No. 1, Jakarta Pusat"
                               @endisset>
                             </div>
                             <div class="mb-2">
@@ -470,7 +471,7 @@
                               <input type="text" class="form-control" id="inputNoIzinPemberitahu"
                                 name="inputNoIzinPemberitahu" @disabled(!isset($data))
                                 @isset($data)
-                                value=""
+                                value="000176"
                               @endisset>
                             </div>
                             <div class="mb-2">
@@ -479,7 +480,7 @@
                                 name="inputTglIzinPemberitahu" placeholder="yyyy-mm-dd" autocomplete="off"
                                 @disabled(!isset($data))
                                 @isset($data)
-                                value=""
+                                value="2016-10-31"
                               @endisset>
                             </div>
                           </div>
@@ -1841,6 +1842,22 @@
       // $("input").not("#inputNomorBarang").prop("disabled", true);
       // $("select").prop("disabled", true);
 
+      $("#inputNomorBarang").on("input", function () {
+        const max_chars = 13
+        const length = $(this).val().length
+        if((length != 0 && length < max_chars) ||
+        (length == max_chars && ($(this).val().substr(11, max_chars-1).match(/^[A-Z]+$/) == null))
+        ) {
+          // $(this).val($(this).val().substr(0, max_chars));
+          $(this).addClass('input-error');
+          $("#invalid-barcode").show();
+        } else {
+          $(this).removeClass('input-error');
+          $("#invalid-barcode").hide();
+          $("#btnSubmitId").removeAttr('disabled');
+        }
+      });
+
       function validateDate(element) {
         let date;
         try {
@@ -1915,11 +1932,7 @@
       $("#btnSubmitId").click(function() {
         const noBarang = $("#inputNomorBarang").val()
 
-        if (noBarang !== "") {
-          getInitialJson(noBarang)
-        } else {
-          $("#inputNomorBarang").addClass('input-error')
-        }
+        getInitialJson(noBarang)
       })
 
       function getInitialJson(noBarang) {
@@ -2012,6 +2025,46 @@
 
       $('#btn-save').on('click', function(e) {
         e.preventDefault();
+
+        let data = setObject(getTableBarangObject())
+        let pathArr = window.location.pathname.split('/')
+        $.ajax({
+          type: "post",
+          url: "{{ route('saveData') }}",
+          data: {
+            barcode: $("#inputNomorBarang").val(),
+            uuid: pathArr[2],
+            idKantorSerah: $("#selectKantorSerah").val(),
+            payload: data,
+            "_token": "{{ csrf_token() }}"
+          },
+          dataType: "json",
+          beforeSend: function() {
+            $("#preloader").show()
+          },
+          success: function (response) {
+            $("#preloader").hide()
+            if (response.status == 1) {
+              console.log('object final saved');
+              console.log(response.data);
+              Swal.fire({
+                title: 'Success!',
+                text: response.message,
+                icon: 'success'
+              })
+            } else {
+              Swal.fire({
+                title: 'Failed!',
+                text: response.message,
+                icon: 'error'
+              })
+            }
+          },
+          error: function(xhr, status, error) {
+            $("#preloader").hide()
+            alert(xhr.responseText)
+          }
+        });
 
       });
 

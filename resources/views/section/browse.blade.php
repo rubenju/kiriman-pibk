@@ -40,18 +40,23 @@
                         <table class="table border rounded-3 table-striped" id="table-data">
                           <thead class="fw-semibold">
                             <tr>
-                              <td>No. Barang</td>
-                              <td>Detail BC 1.1</td>
+                              <td>Action</td>
+                              <td>Status</td>
+                              <td>No. Barcode</td>
+                              <td>No. BC 11</td>
+                              <td>Tanggal BC 11</td>
+                              <td>Nama Pengangkut</td>
                               <td>No. ID Pemberitahu</td>
-                              <td>No. Master BLAWB</td>
                               <td>Nama Pengirim</td>
                               <td>Alamat Pengirim</td>
                               <td>Nama Penerima</td>
                               <td>Alamat Penerima</td>
-                              <td>Seri Barang</td>
-                              <td>HSCODE</td>
-                              <td>Status</td>
-                              <td>Action</td>
+                              <td>No. Master BLAWB</td>
+                              <td>Tanggal Master BLAWB</td>
+                              <td>No. House BLAWB</td>
+                              <td>Tanggal House BLAWB</td>
+                              <td>Total Bruto</td>
+                              <td>Total Tagihan</td>
                             </tr>
                           </thead>
                           <tbody>
@@ -126,11 +131,6 @@
           dataType: "json",
           success: function(response) {
             if (response.status == 1) {
-              // Swal.fire({
-              //   title: 'Success!',
-              //   text: 'Data ditemukan',
-              //   icon: 'success'
-              // });
               $('#table-data tbody').html(response.data);
               // $("#table-data").DataTable();
             } else {

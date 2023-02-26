@@ -9,6 +9,7 @@
       <div class="col">
         <div class="card pibk">
           <div class="card-body">
+            @if(isset($data))
             <div class="card mt-4 final-form">
               <div class="card-body">
                 <fieldset disabled>
@@ -810,12 +811,17 @@
                   <div class="col text-center">
                     <a type="button" class="btn btn-style fw-bold" onclick="history.back()"><i
                         class="bi bi-arrow-left me-2"></i>Kembali</a>
-                    <a type="button" class="btn btn-send fw-bold" href="send/{{ $data['nomorBarang'] }}"><i
-                        class="ri-send-plane-fill me-1"></i>Kirim Data</a>
+                        @if ($status == "000")
+                          <a type="button" class="btn btn-send fw-bold" href="send/{{ $data['nomorBarang'] }}"><i
+                            class="ri-send-plane-fill me-1"></i>Kirim Data</a>
+                        @endif
                   </div>
                 </div>
               </div>
             </div>
+            @else
+            <h5 class="text-center mt-4">{{ $message }}</h5>
+            @endif
           </div>
         </div>
       </div>
